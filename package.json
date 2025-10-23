@@ -1,0 +1,13 @@
+{
+  "name": "eleventyblog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "luxon": "^3.5.0"
+  }
+}
