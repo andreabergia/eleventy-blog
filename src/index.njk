@@ -4,6 +4,7 @@ title: Andrea Bergia's Website
 description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict.
 ---
 
+{% block content %}
 <section class="intro">
   <h1>Hello!</h1>
   <p>{{ site.tagline }}</p>
@@ -24,3 +25,4 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
 {% else %}
 <p>No posts yet. Migration in progress.</p>
 {% endif %}
+{% endblock %}

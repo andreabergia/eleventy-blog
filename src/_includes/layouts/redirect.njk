@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ site.language or 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title or "Redirecting…" }}</title>
+    {% if target %}
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+    <link rel="canonical" href="{{ target }}">
+    {% endif %}
+  </head>
+  <body>
+    <p>
+      {% if target %}
+      Redirecting to <a href="{{ target }}">{{ target }}</a>…
+      {% else %}
+      This page is a placeholder redirect without a configured destination.
+      {% endif %}
+    </p>
+  </body>
+</html>
