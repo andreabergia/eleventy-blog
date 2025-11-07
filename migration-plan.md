@@ -21,11 +21,14 @@
 ## 3. Content Migration
 - Copy Markdown posts from `../hugoblog/content/post/**` into Eleventy’s content directory, preserving year/month subfolders.
 - Normalize front matter (YAML/TOML) to Eleventy-friendly YAML; fix indentation or key mismatches.
+- Automate front-matter conversion (small Node script or Eleventy data transform) so each new batch of posts migrates consistently.
 - Introduce new front-matter fields as needed (e.g., `featured`, `externalLink`, `series`) to maintain behavior.
+- Track migration progress in a table or checklist (Hugo slug → Eleventy path) to guarantee full coverage.
 - Create a script or manual checklist to validate that every Hugo post has an Eleventy counterpart.
 
 ## 4. Collections & Taxonomies
 - Define Eleventy collections for `posts`, `tags`, and `series`.
+- Lock in final tag/series URL patterns (`/blog/tags/{tag}`, etc.) before generating archive pages to avoid post-migration redirects.
 - Implement helper collections: 
   - Featured posts (sorted by `featured` value).
   - Recent posts (limit 10, newest first).
@@ -70,6 +73,7 @@
 - Check markdown rendering differences (shortcodes, code fences, markdown-it vs Goldmark quirks).
 - Validate pagination, tag/series pages, RSS feed, and featured/recent lists.
 - Run link checker or Eleventy’s output validation to catch broken internal/external links.
+- Add a quick regression command (e.g., `npm run build && linkinator _site`) to spot template or taxonomy breakages before commits.
 - Set up automated builds/tests (npm scripts, Netlify/Vercel preview) and document run commands.
 
 ## 11. Launch & Cleanup
