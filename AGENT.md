@@ -8,6 +8,7 @@
 - Eleventy scaffolding has not been created yet; the repository is empty aside from planning docs.
 - Hugo content, layouts, and data live outside the workspace at `../hugoblog`; use those files as the migration source of truth.
 - No Node dependencies or build scripts are installed; the first engineering task will be project bootstrap.
+- URL compatibility is critical: every legacy URL must continue to work, even if other Hugo-specific behavior diverges.
 
 ## Key References
 - `migration-plan.md`: authoritative checklist for the Eleventy migration.
