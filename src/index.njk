@@ -1,10 +1,13 @@
 ---
 layout: layouts/base.njk
-title: Andrea Bergia
+title: Andrea Bergia's Website
+description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict.
 ---
 
-<h1>Welcome</h1>
-<p>This is the emerging Eleventy version of Andrea Bergia's website.</p>
+<section class="intro">
+  <h1>Hello!</h1>
+  <p>{{ site.tagline }}</p>
+</section>
 
 {% if collections.blog | length %}
 <h2>Latest posts</h2>

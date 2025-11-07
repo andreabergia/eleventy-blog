@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.language or 'en' }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if title %}{{ title }} | {% endif %}Eleventy Blog</title>
+    {% set pageTitle = title or site.title %}
+    {% set pageDescription = description or site.description %}
+    <title>{{ pageTitle }}</title>
+    {% if pageDescription %}
+    <meta name="description" content="{{ pageDescription }}">
+    {% endif %}
+    {% if site.keywords %}
+    <meta name="keywords" content="{{ site.keywords | join(', ') }}">
+    {% endif %}
     <link rel="stylesheet" href="/assets/css/site.css">
   </head>
   <body>
-    <main>
-      {% block content %}{% endblock %}
-    </main>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-title" href="/">{{ site.title }}</a>
+        {% if site.tagline %}
+        <p class="site-tagline">{{ site.tagline }}</p>
+        {% endif %}
+        {% if site.menu %}
+        <nav aria-label="Primary">
+          <ul class="site-nav">
+            {% for item in site.menu %}
+            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% endif %}
+      </header>
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+      <footer class="site-footer">
+        <p>&copy; {{ site.author.name }}</p>
+        {% if site.social %}
+        <ul class="site-social">
+          {% for item in site.social %}
+          <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </footer>
+    </div>
   </body>
 </html>

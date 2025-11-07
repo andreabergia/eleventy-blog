@@ -1,9 +1,11 @@
 const { DateTime } = require("luxon");
+const site = require("./src/_data/site.json");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("MMMM d, yyyy");
+    const format = site.dateFormat || "LLLL d, yyyy";
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
   });
 
   eleventyConfig.addFilter("dateIso", (dateObj) => {
