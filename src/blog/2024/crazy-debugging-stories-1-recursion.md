@@ -6,6 +6,8 @@ series: ["Crazy debugging stories"]
 title: Crazy debugging stories - Recursion
 ---
 
+{% postSeries %}
+
 Welcome to the first post of my new miniseries, where I'll be sharing some of the most intricate and entertaining bug investigations I've done throughout my career. I hope you find these stories enjoyable!
 
 # Recursion
