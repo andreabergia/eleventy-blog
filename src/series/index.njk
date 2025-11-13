@@ -1,0 +1,20 @@
+---
+layout: layouts/page.njk
+title: Series
+permalink: /series/index.html
+---
+
+<h1>Series</h1>
+
+{% if collections.series and collections.series.length %}
+<ul class="series-list">
+  {% for series in collections.series %}
+  <li>
+    <a href="/series/{{ series.slug }}/">{{ series.name }}</a>
+    <span class="series-count">{{ series.posts | length }} posts</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No series have been migrated yet.</p>
+{% endif %}

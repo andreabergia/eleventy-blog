@@ -1,0 +1,47 @@
+{
+    "status": "success",
+    "data": {
+        "lang": "en",
+        "author": null,
+        "title": "Inverse Triangle Inequality",
+        "publisher": "github.io",
+        "image": null,
+        "date": "2025-07-16T00:36:52.000Z",
+        "url": "https://matklad.github.io/2025/07/07/inverse-triangle-inequality.html",
+        "description": "|AC| < |AB| + |BC| is one of the most hardworking inequalities in mathematics. It illustrates an obvious fact --- the fastest way to go from point A to point C is to go directly, without detours.",
+        "logo": {
+            "url": "https://matklad.github.io/favicon.png",
+            "type": "png",
+            "size": 5868,
+            "height": 128,
+            "width": 128,
+            "size_pretty": "5.87 kB"
+        }
+    },
+    "statusCode": 200,
+    "redirects": [],
+    "headers": {
+        "connection": "keep-alive",
+        "content-length": "5702",
+        "server": "GitHub.com",
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Wed, 16 Jul 2025 00:36:52 GMT",
+        "access-control-allow-origin": "*",
+        "etag": "W/\"6876f424-43b2\"",
+        "expires": "Wed, 16 Jul 2025 07:24:24 GMT",
+        "cache-control": "max-age=600",
+        "content-encoding": "gzip",
+        "x-proxy-cache": "MISS",
+        "x-github-request-id": "DCD9:3B277E:865260:8E5055:68775150",
+        "accept-ranges": "bytes",
+        "age": "0",
+        "date": "Wed, 16 Jul 2025 07:14:24 GMT",
+        "via": "1.1 varnish",
+        "x-served-by": "cache-lga21933-LGA",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-timer": "S1752650065.680018,VS0,VE18",
+        "vary": "Accept-Encoding",
+        "x-fastly-request-id": "d3368bd6b9b91023fee66e18991e7ce76e4e6ffb"
+    }
+}

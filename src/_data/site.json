@@ -15,7 +15,7 @@
     { "name": "About", "url": "/about/" },
     { "name": "Tags", "url": "/tags/" },
     { "name": "Series", "url": "/series/" },
-    { "name": "Blog", "url": "/blog/" }
+    { "name": "Blog", "url": "/post/" }
   ],
   "social": [
     { "name": "RSS", "icon": "fa fa-rss fa-2x", "url": "/index.xml" },

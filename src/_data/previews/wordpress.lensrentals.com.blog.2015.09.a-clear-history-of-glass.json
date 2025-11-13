@@ -1,0 +1,36 @@
+{
+    "status": "success",
+    "data": {
+        "title": "A Clear History of Glass",
+        "description": "I’ve written about glass, as in lenses, for years now. But I’ve never looked into the history of glass as just a substance, because, well, who cared? When I accidentally did some reading about early glass, though, I was rather amazed at just how important it was. So I thought I’d write about the his…",
+        "lang": "en",
+        "author": "Roger Cicala",
+        "publisher": "Lensrentals Blog",
+        "image": {
+            "url": "https://www.lensrentals.com/blog/media/2015/09/1024px-Lens6b-en-1.jpg",
+            "type": "jpg",
+            "size": 36697,
+            "height": 395,
+            "width": 600,
+            "size_pretty": "36.7 kB"
+        },
+        "date": "2016-11-21T19:43:04.000Z",
+        "url": "https://www.lensrentals.com/blog/2015/09/a-clear-history-of-glass/",
+        "logo": {
+            "url": "https://www.lensrentals.com/blog/wp-content/themes/lens-rentals/img/logo-camera.png",
+            "type": "png"
+        }
+    },
+    "statusCode": 200,
+    "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "24926",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Sun, 10 Jul 2022 20:31:46 GMT",
+        "link": "<https://www.lensrentals.com/blog/wp-json/>; rel=\"https://api.w.org/\"\n<https://www.lensrentals.com/blog/?p=24327>; rel=shortlink",
+        "server": "Apache/2.4.7 (Ubuntu)",
+        "vary": "Accept-Encoding",
+        "x-powered-by": "PHP/5.5.9-1ubuntu4.19"
+    }
+}

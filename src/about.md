@@ -3,6 +3,9 @@ layout: layouts/page.njk
 title: About me
 description: Learn more about Andrea Bergia, an Italian software engineer, compiler fan, and espresso enthusiast.
 permalink: /about/index.html
+aliases:
+  - /about/about-me
+  - /about-me
 ---
 
 I am an Italian software engineer, and I have been working as a principal software engineer for quite a few years. I loved computers since I can remember, and I have started programming when I was a kid in Basic. Since there, life has been a continuous process of learning technologies and programming languages.

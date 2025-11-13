@@ -1,0 +1,25 @@
+---
+layout: layouts/page.njk
+pagination:
+  data: collections.series
+  size: 1
+  alias: series
+permalink: /series/{{ series.slug }}/index.html
+eleventyComputed:
+  title: "Series: {{ series.name }}"
+---
+
+<h1>{{ series.name }}</h1>
+
+{% if series.posts and series.posts.length %}
+<ul class="post-list">
+  {% for post in series.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <span class="post-meta">{{ post.date | readableDate }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>This series does not have any posts yet.</p>
+{% endif %}

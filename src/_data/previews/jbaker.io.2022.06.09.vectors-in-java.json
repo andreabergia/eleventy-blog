@@ -1,0 +1,37 @@
+{
+    "status": "success",
+    "data": {
+        "title": "SIMD accelerated sorting in Java - how it works and why it was 3x faster · James Baker",
+        "description": "09 Jun 2022",
+        "lang": "en",
+        "author": null,
+        "publisher": "jbaker.io",
+        "image": null,
+        "date": "2022-06-12T10:12:22.000Z",
+        "url": "https://jbaker.io/2022/06/09/vectors-in-java/",
+        "logo": {
+            "url": "https://wpcom.files.wordpress.com/2017/11/cropped-wordpress.png?w=48",
+            "type": "ico",
+            "size": 167392,
+            "size_pretty": "167 kB"
+        }
+    },
+    "statusCode": 200,
+    "headers": {
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "71a1cec67edf8c33-EWR",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 12 Jun 2022 10:12:22 GMT",
+        "etag": "W/\"7102e73993af6bcab67c35424c553946\"",
+        "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=o9hgzhRmFT3lfR91F%2FIKRsh9pvmu9wrTMdBB1V%2BkKDYou1zZpf8bCQRMpGOsHk1p2ZbADPgsTJ8OevTqMH04K7cY9QU3WOlWcicJg8Sh8r%2FTQlMtl8JTKUwtnZk%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff"
+    }
+}

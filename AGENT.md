@@ -5,10 +5,11 @@
 - Follow `migration-plan.md` for sequencing and use this file as quick orientation when picking up the work midstream.
 
 ## Current Status Snapshot
-- Eleventy scaffolding has not been created yet; the repository is empty aside from planning docs.
-- Hugo content, layouts, and data live outside the workspace at `../hugoblog`; use those files as the migration source of truth.
-- No Node dependencies or build scripts are installed; the first engineering task will be project bootstrap.
-- URL compatibility is critical: every legacy URL must continue to work, even if other Hugo-specific behavior diverges.
+- Eleventy project is up and running with `@11ty/eleventy` + `luxon`; `npm run build` succeeds and outputs into `_site/`.
+- All Hugo markdown (2014–2025), preview JSON payloads, and static assets have been copied over (`src/blog/**`, `src/_data/previews`, `public/**`).
+- Key dynamic behaviors already exist: permalink computation, aliases → redirect pages, featured/recent collections, series metadata, and the `previewExternal` & `postSeries` shortcodes.
+- Front-end is intentionally in a placeholder state; we will not copy the Hugo/Coder theme but instead design a fresh look & feel (new fonts, layout system, and visual language).
+- URL parity for individual posts (`/blog/{yyyy}/{MM}/{slug}`) is in place, but we still need `/index.xml`, `/sitemap.xml`, `/robots.txt`, and production-ready head/footer markup.
 
 ## Key References
 - `migration-plan.md`: authoritative checklist for the Eleventy migration.
@@ -27,6 +28,12 @@
 - `npm install @11ty/eleventy` — add Eleventy as a dev dependency.
 - `npx @11ty/eleventy --serve` — run local dev server.
 - `npx @11ty/eleventy --quiet` — build production output for inspection.
+
+## Immediate Focus
+1. Define and implement the new visual identity (fonts, spacing scale, header/footer/navigation, color treatment) directly in Eleventy templates/CSS.
+2. Add SEO + social metadata (canonical URLs, OpenGraph/Twitter cards, favicon links) and integrate GoatCounter + Disqus in the post layout.
+3. Ship `/index.xml`, `/sitemap.xml`, and `/robots.txt` via Eleventy so downstream consumers keep working.
+4. Backfill README/deployment notes once the above features are stable.
 
 ## Open Questions To Track
 - Will the external preview data continue to be maintained manually, or should a fetch routine be ported?

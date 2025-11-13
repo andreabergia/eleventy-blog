@@ -1,28 +1,49 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: Andrea Bergia's Website
 description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict.
 ---
 
-{% block content %}
 <section class="intro">
   <h1>Hello!</h1>
   <p>{{ site.tagline }}</p>
 </section>
 
-{% if collections.blog | length %}
-<h2>Latest posts</h2>
-<ul>
-  {% for post in collections.blog | reverse %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-    {% if post.date %}
-      <span>— {{ post.date | readableDate }}</span>
+<div class="home-sections">
+  <section class="home-section">
+    <h2>⭐️ Featured blog posts</h2>
+    {% if collections.featuredPosts and collections.featuredPosts.length %}
+    <ul class="post-list">
+      {% for post in collections.featuredPosts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        {% if post.date %}
+        <span class="post-meta">{{ post.date | readableDate }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No featured stories yet.</p>
     {% endif %}
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No posts yet. Migration in progress.</p>
-{% endif %}
-{% endblock %}
+  </section>
+
+  <section class="home-section">
+    <h2>📅 Recent blog posts</h2>
+    {% set recentPosts = collections.recentPosts %}
+    {% if recentPosts and recentPosts.length %}
+    <ul class="post-list">
+      {% for post in recentPosts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        {% if post.date %}
+        <span class="post-meta">{{ post.date | readableDate }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No posts yet. Migration in progress.</p>
+    {% endif %}
+  </section>
+</div>
