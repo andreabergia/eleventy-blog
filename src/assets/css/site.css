@@ -19,7 +19,7 @@
     --radius-sm: 6px;
     --radius-md: 10px;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    --max-width: 64rem;
+    --max-width: 60rem;
 
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -118,16 +118,30 @@ h3 {
     margin: var(--space-lg) 0 var(--space-md);
 }
 
-p {
-    margin: 0;
+p,
+ul,
+ol {
+    margin: var(--space-md) 0;
     color: var(--muted);
     font-weight: 400;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 ul {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+article {
+    p {
+        text-align: justify;
+    }
+
+    li {
+        margin: var(--space-sm) 0;
+    }
 }
 
 .site-header {
