@@ -36,13 +36,11 @@
       </main>
       <footer class="site-footer">
         <p>&copy; {{ site.author.name }}</p>
-        {% if site.social %}
         <ul class="site-social">
           {% for item in site.social %}
           <li><a href="{{ item.url }}">{{ item.name }}</a></li>
           {% endfor %}
         </ul>
-        {% endif %}
       </footer>
     </div>
   </body>

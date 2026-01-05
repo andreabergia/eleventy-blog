@@ -476,13 +476,15 @@ ul {
     text-align: center;
     font-size: var(--font-size-sm);
     color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
 
     .site-social {
-        margin-top: var(--space-md);
         display: flex;
         justify-content: center;
         gap: var(--space-md);
-        flex-wrap: wrap;
 
         a {
             color: var(--text);
@@ -503,5 +505,14 @@ ul {
 
     .series-list li {
         align-items: baseline;
+    }
+
+    .site-footer {
+        flex-direction: column;
+
+        .site-social {
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
     }
 }
