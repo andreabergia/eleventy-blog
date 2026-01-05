@@ -1,4 +1,3 @@
-- remove tagline
 - whitespace is horrible
 - second bg color
 - move header links to right and review them
