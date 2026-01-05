@@ -1,0 +1,13 @@
+- remove tagline
+- whitespace is horrible
+- second bg color
+- move header links to right and review them
+- add my face to the left
+- improve post metadata
+  - "published at"
+  - word count
+  - tags list (right aligned)
+- "blog" page
+- homepage
+- tags
+- series link
