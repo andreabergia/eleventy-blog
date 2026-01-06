@@ -17,7 +17,12 @@
   <body>
     <div class="page">
       <header class="site-header">
-        <a class="site-title" href="/">{{ site.title }}</a>
+        <div class="site-branding">
+          {% if site.author.email %}
+          <img src="{{ site.author.email | gravatar(80) }}" alt="{{ site.author.name }}" class="site-avatar">
+          {% endif %}
+          <a class="site-title" href="/">{{ site.title }}</a>
+        </div>
         {% if site.menu %}
         <nav aria-label="Primary">
           <ul class="site-nav">

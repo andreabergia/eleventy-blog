@@ -2,7 +2,6 @@
 
 ## Urgent
 
-- add my face to the left
 - improve post metadata
   - "published at"
   - word count

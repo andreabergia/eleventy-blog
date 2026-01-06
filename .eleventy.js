@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const crypto = require("node:crypto");
 const { DateTime } = require("luxon");
 const site = require("./src/_data/site.json");
 const {
@@ -98,6 +99,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("slugify", slugify);
+
+  eleventyConfig.addFilter("gravatar", (email, size = 80) => {
+    if (!email) return "";
+    const hash = crypto.createHash("md5").update(email.toLowerCase().trim()).digest("hex");
+    return `https://www.gravatar.com/avatar/${hash}?s=${size}`;
+  });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {
     const posts = collectPosts(collectionApi);

@@ -8,7 +8,8 @@
   "dateFormat": "cccc, LLL d, yyyy",
   "author": {
     "name": "Andrea Bergia",
-    "profile": "https://andreabergia.com"
+    "profile": "https://andreabergia.com",
+    "email": "andreabergia@gmail.com"
   },
   "disqusShortname": "andreabergia",
   "menu": [

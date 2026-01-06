@@ -26,6 +26,8 @@
     --space-lg: 1.5rem;
     --space-xl: 2.5rem;
 
+    --avatar-size: 2.5rem;
+
     --padding-x: clamp(var(--space-md), 1.5vw, var(--space-xl));
     --padding-x-negative: calc(-1 * var(--padding-x));
 
@@ -198,6 +200,19 @@ main:has(.post-header-section) {
     justify-content: space-between;
     gap: var(--space-sm);
     border-bottom: 1px solid var(--border);
+
+    .site-branding {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+
+    .site-avatar {
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border-radius: 50%;
+        border: 2px solid var(--border);
+    }
 
     .site-title {
         display: inline-flex;
