@@ -191,17 +191,18 @@ main:has(.post-header-section) {
     max-width: var(--max-width);
     width: 100%;
     margin: 0 auto;
-    padding: var(--space-lg) 0 var(--space-md);
+    padding: var(--space-sm) 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
-    text-align: left;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    border-bottom: 1px solid var(--border);
 
     .site-title {
         display: inline-flex;
         font-family: var(--font-heading);
-        font-size: clamp(2.1rem, 4vw, 2.8rem);
+        font-size: clamp(1.6rem, 3vw, 2rem);
         color: var(--text);
         letter-spacing: 0.04em;
         text-decoration: none;
@@ -209,33 +210,32 @@ main:has(.post-header-section) {
     }
 
     nav {
-        margin-top: var(--space-sm);
+        margin-top: 0;
     }
 }
 
 .site-nav {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
     padding: 0;
 }
 
 .site-nav a {
-    color: var(--text);
+    color: var(--muted);
     font-weight: 600;
-    letter-spacing: 0.02em;
-    padding: var(--space-sm) var(--space-sm);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition:
-        color 150ms ease,
-        border-color 150ms ease;
+    background: transparent;
+    white-space: nowrap;
 }
 
 .site-nav a:hover {
     color: var(--accent);
-    border-color: var(--accent);
 }
 
 .intro {
@@ -547,6 +547,12 @@ main:has(.post-header-section) {
 @media (max-width: 640px) {
     .page {
         padding: var(--space-md);
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .site-nav {
