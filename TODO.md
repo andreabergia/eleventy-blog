@@ -2,7 +2,6 @@
 
 ## Urgent
 
-- second bg color
 - move header links to right and review them
 - add my face to the left
 - improve post metadata

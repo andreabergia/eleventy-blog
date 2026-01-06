@@ -26,6 +26,9 @@
     --space-lg: 1.5rem;
     --space-xl: 2.5rem;
 
+    --padding-x: clamp(var(--space-md), 1.5vw, var(--space-xl));
+    --padding-x-negative: calc(-1 * var(--padding-x));
+
     --font-size-xs: 0.8rem;
     --font-size-sm: 0.9rem;
 }
@@ -79,7 +82,7 @@ img {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: var(--space-lg) clamp(var(--space-md), 1.5vw, var(--space-xl));
+    padding: var(--space-lg) var(--padding-x);
     gap: var(--space-lg);
 }
 
@@ -142,6 +145,46 @@ article {
     li {
         margin: var(--space-sm) 0;
     }
+}
+
+/* Two-tone post layout sections */
+main:has(.post-header-section) {
+    padding-bottom: 0;
+    max-width: none;
+    width: 100%;
+}
+
+.post-header-section {
+    background: var(--bg);
+    margin-left: var(--padding-x-negative);
+    margin-right: var(--padding-x-negative);
+    padding: var(--space-xl) var(--padding-x);
+}
+
+.post-header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.post-header-content h1 {
+    margin-top: 0;
+}
+
+.post-content-section {
+    background: var(--surface);
+    margin-left: var(--padding-x-negative);
+    margin-right: var(--padding-x-negative);
+    padding: var(--space-xl) var(--padding-x);
+    margin-top: 0;
+}
+
+.post-content-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.post-content-wrapper article {
+    margin-top: 0;
 }
 
 .site-header {

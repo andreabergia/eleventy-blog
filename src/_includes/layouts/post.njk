@@ -1,13 +1,22 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<article>
-  <h1>{{ title }}</h1>
-  {% if page.date %}
-  <p>
-    <time datetime="{{ page.date | dateIso }}">{{ page.date | readableDate }}</time>
-  </p>
-  {% endif %}
-  {{ content | safe }}
-</article>
+<div class="post-header-section">
+  <div class="post-header-content">
+    <h1>{{ title }}</h1>
+    {% if page.date %}
+    <p>
+      <time datetime="{{ page.date | dateIso }}">{{ page.date | readableDate }}</time>
+    </p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="post-content-section">
+  <div class="post-content-wrapper">
+    <article>
+      {{ content | safe }}
+    </article>
+  </div>
+</div>
 {% endblock %}
