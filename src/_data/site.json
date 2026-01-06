@@ -8,14 +8,14 @@
   "dateFormat": "cccc, LLL d, yyyy",
   "author": {
     "name": "Andrea Bergia",
-    "profile": "https://twitter.com/andreabergia"
+    "profile": "https://andreabergia.com"
   },
   "disqusShortname": "andreabergia",
   "menu": [
     { "name": "About", "url": "/about/" },
+    { "name": "Blog", "url": "/post/" },
     { "name": "Tags", "url": "/tags/" },
-    { "name": "Series", "url": "/series/" },
-    { "name": "Blog", "url": "/post/" }
+    { "name": "Series", "url": "/series/" }
   ],
   "social": [
     { "name": "RSS", "icon": "fa fa-rss fa-2x", "url": "/index.xml" },
