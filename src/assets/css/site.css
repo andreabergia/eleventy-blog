@@ -7,9 +7,9 @@
     --font-mono:
         "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --bg: #2d3140;
-    --surface: #1a1c26;
-    --surface-alt: #242a3a;
+    --bg: #161616;
+    --surface: #212121;
+    --surface-alt: #191919;
     --border: #3a3f52;
     --text: #f2f4fb;
     --muted: #cdd0dd;
