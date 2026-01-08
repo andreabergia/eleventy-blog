@@ -1,9 +1,5 @@
 # TODO 
 
-- improve post metadata
-  - "published at"
-  - word count
-  - tags list (right aligned)
 - "blog" page
   - code rendering (test)
 - homepage
