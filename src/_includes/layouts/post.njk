@@ -5,9 +5,26 @@
   <div class="post-header-content">
     <h1>{{ title }}</h1>
     {% if page.date %}
-    <p>
-      <time datetime="{{ page.date | dateIso }}">{{ page.date | readableDate }}</time>
-    </p>
+    <div class="post-metadata">
+      <p>
+        Published <time datetime="{{ page.date | dateIso }}">{{ page.date | readableDate }}</time>
+        {% set wordCount = content | wordCount %}
+        {% set readingTime = content | readingTime %}
+        {% if wordCount > 0 %}
+        – {{ wordCount }} words, {{ readingTime }} minute{% if readingTime != 1 %}s{% endif %}
+        {% endif %}
+      </p>
+      {% if tags and tags.length > 0 %}
+      <p>
+        Tagged:
+        {% for tag in tags %}
+          {% if tag.toLowerCase() != "blog" %}
+            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endif %}
+        {% endfor %}
+      </p>
+      {% endif %}
+    </div>
     {% endif %}
   </div>
 </div>

@@ -172,6 +172,25 @@ main:has(.post-header-section) {
     margin-top: 0;
 }
 
+.post-metadata {
+    font-size: var(--font-size-sm);
+    color: var(--muted);
+}
+
+.post-metadata p {
+    margin: var(--space-sm) 0;
+}
+
+.post-metadata a {
+    color: var(--muted);
+    text-decoration-color: var(--muted);
+}
+
+.post-metadata a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
 .post-content-section {
     background: var(--surface);
     margin-left: var(--padding-x-negative);

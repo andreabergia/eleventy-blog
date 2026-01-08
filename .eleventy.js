@@ -33,6 +33,13 @@ const escapeHtml = (value = "") =>
     }
   });
 
+const countWords = (content) => {
+  if (!content) return 0;
+  const text = content.replace(/<[^>]*>/g, "");
+  const words = text.trim().split(/\s+/);
+  return words.length;
+};
+
 const collectPosts = (collectionApi) =>
   collectionApi
     .getFilteredByGlob(POST_GLOB)
@@ -104,6 +111,14 @@ module.exports = function (eleventyConfig) {
     if (!email) return "";
     const hash = crypto.createHash("md5").update(email.toLowerCase().trim()).digest("hex");
     return `https://www.gravatar.com/avatar/${hash}?s=${size}`;
+  });
+
+  eleventyConfig.addFilter("wordCount", countWords);
+
+  eleventyConfig.addFilter("readingTime", (content) => {
+    const words = countWords(content);
+    const wordsPerMinute = 200;
+    return Math.ceil(words / wordsPerMinute);
   });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {
