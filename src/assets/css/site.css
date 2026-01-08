@@ -291,14 +291,16 @@ main:has(.post-header-section) {
 
 .site-nav a {
     color: var(--muted);
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    letter-spacing: 0.03em;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding: 0.4rem 0.75rem;
+    padding: 0.25rem 0.5rem;
     text-decoration: none;
     background: transparent;
     white-space: nowrap;
+    transition: color 150ms ease;
 }
 
 .site-nav a:hover {
