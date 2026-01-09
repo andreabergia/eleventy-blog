@@ -188,6 +188,24 @@ article {
     ul ul ul {
         list-style: square;
     }
+
+    blockquote {
+        margin: var(--space-lg) 0;
+        padding: var(--space-md) var(--space-lg);
+        border-left: 4px solid var(--accent);
+        background: var(--surface-alt);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+
+        p {
+            margin: 0;
+            color: var(--text);
+            font-style: italic;
+        }
+
+        p + p {
+            margin-top: var(--space-md);
+        }
+    }
 }
 
 /* Two-tone post layout sections */
