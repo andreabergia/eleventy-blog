@@ -10,6 +10,7 @@ const {
   getSeriesList,
   slugify
 } = require("./lib/content-utils");
+const imageShortcode = require("./lib/image-shortcode");
 
 const POST_GLOB = "./src/blog/**/*.{md,markdown}";
 const PREVIEW_DATA_DIR = path.join(__dirname, "src/_data/previews");
@@ -95,6 +96,55 @@ const loadPreviewPayload = (src) => {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, { showLineNumbers: false });
   eleventyConfig.addWatchTarget("src/_data/previews");
+
+  // Add markdown-it image override
+  eleventyConfig.amendLibrary("md", (mdLib) => {
+    const defaultImageRenderer = mdLib.renderer.rules.image;
+
+    mdLib.renderer.rules.image = function (tokens, idx, options, env, self) {
+      const token = tokens[idx];
+      const src = token.attrGet("src");
+      const alt = token.content;
+
+      const srcEncoded = Buffer.from(src).toString("base64");
+      const altEncoded = Buffer.from(alt).toString("base64");
+
+      // Return async placeholder - will be processed during build
+      return `<eleventy-image src="${srcEncoded}" alt="${altEncoded}"></eleventy-image>`;
+    };
+  });
+
+  // Add async transform to process image placeholders
+  eleventyConfig.addTransform("processImages", async function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) {
+      return content;
+    }
+
+    const imageRegex = /<eleventy-image src="([^"]+)" alt="([^"]*)"><\/eleventy-image>/g;
+    const promises = [];
+    const replacements = [];
+
+    let match;
+    while ((match = imageRegex.exec(content)) !== null) {
+      const [fullMatch, srcEncoded, altEncoded] = match;
+      const src = Buffer.from(srcEncoded, "base64").toString("utf8");
+      const alt = Buffer.from(altEncoded, "base64").toString("utf8");
+
+      const promise = imageShortcode(src, alt).then(html => {
+        replacements.push({ placeholder: fullMatch, html });
+      });
+      promises.push(promise);
+    }
+
+    await Promise.all(promises);
+
+    let result = content;
+    for (const { placeholder, html } of replacements) {
+      result = result.replace(placeholder, html);
+    }
+
+    return result;
+  });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
