@@ -540,38 +540,108 @@ main:has(.post-header-section) {
 }
 
 .series-box {
+    background: var(--surface-alt);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    background: var(--surface);
-    margin: var(--space-lg) 0;
+    margin: var(--space-xl) 0;
     overflow: hidden;
     box-shadow: var(--shadow);
+}
 
-    .series-box-title {
-        padding: var(--space-md) var(--space-lg);
-        border-bottom: 1px solid var(--border);
-        color: var(--accent);
-        font-weight: 700;
-        letter-spacing: 0.03em;
-    }
+.series-header {
+    background: var(--surface);
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
 
-    .series-box-content {
-        padding: var(--space-md) var(--space-lg);
+.series-kicker {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+}
+
+.series-name {
+    margin: 0 !important;
+
+    a {
+        text-decoration: none;
+        color: var(--text);
+
+        &:hover {
+            color: var(--accent);
+        }
     }
 }
 
-.series {
-    display: grid;
-    gap: var(--space-sm);
+.series-posts {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-    a {
-        color: var(--text);
+.series-item {
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    font-size: 0.95rem;
+    transition: background 150ms ease;
+
+    &:last-child {
+        border-bottom: none;
     }
 
-    .this-post {
-        font-size: var(--font-size-xs);
+    &:hover {
+        background: var(--surface);
+    }
+}
+
+.series-number {
+    font-family: var(--font-mono);
+    color: var(--muted);
+    font-size: var(--font-size-xs);
+    opacity: 0.6;
+    min-width: 1.8em;
+}
+
+.series-item a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover {
+        color: var(--text);
+    }
+}
+
+.series-item-current {
+    background: var(--surface);
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--accent);
+    }
+
+    .series-title {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .series-number {
         color: var(--accent);
-        margin-left: var(--space-sm);
+        opacity: 1;
     }
 }
 

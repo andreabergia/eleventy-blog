@@ -349,31 +349,37 @@ module.exports = function (eleventyConfig) {
 
     const currentUrl = data.page?.url;
     const listItems = group.posts
-      .map((post) => {
-        if (post.url === currentUrl) {
-          return `<li class="list"><span class="this-post-title">${escapeHtml(
-            post.data.title || "Untitled post"
-          )}</span> <span class="this-post">⬅️ this post</span></li>`;
+      .map((post, index) => {
+        const isCurrent = post.url === currentUrl;
+        const className = isCurrent ? "series-item series-item-current" : "series-item";
+        const number = `<span class="series-number">${(index + 1).toString().padStart(2, '0')}</span>`;
+
+        if (isCurrent) {
+          return `<li class="${className}">
+            ${number}
+            <span class="series-title">${escapeHtml(post.data.title || "Untitled post")}</span>
+          </li>`;
         }
-        return `<li class="list"><a href="${post.url}">${escapeHtml(
-          post.data.title || "Untitled post"
-        )}</a></li>`;
+
+        return `<li class="${className}">
+            ${number}
+            <a href="${post.url}" class="series-link">${escapeHtml(post.data.title || "Untitled post")}</a>
+        </li>`;
       })
       .join("");
 
     return `
-<div class="series-box">
-  <div class="series-box-title">
-    <p>This post is part of the <a href="/series/${slug}/"><strong>${escapeHtml(
-      displayName
-    )}</strong></a> series.</p>
+<nav class="series-box" aria-labelledby="series-title">
+  <div class="series-header">
+    <span class="series-kicker">Series</span>
+    <h3 id="series-title" class="series-name">
+        <a href="/series/${slug}/">${escapeHtml(displayName)}</a>
+    </h3>
   </div>
-  <div class="series-box-content">
-    <ul class="series">
-      ${listItems}
-    </ul>
-  </div>
-</div>`.trim();
+  <ul class="series-posts">
+    ${listItems}
+  </ul>
+</nav>`.trim();
   });
 
   eleventyConfig.addNunjucksShortcode("ref", function (target) {
