@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-5]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-12-07-introduction-to-parsing-4.markdown" %}) we have improved our parser so that it can now handle basic arithmetics and floating number. This time, we'll teach it how to call functions!
 

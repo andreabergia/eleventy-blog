@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-9/]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2015-01-02-introduction-to-parsing-8.markdown" %}) we started adapting our parser to work with an AST, as a step towards handling function definitions. In this part, we'll continue on that road.
 

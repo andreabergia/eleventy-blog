@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-1]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In this posts series, we're going to dive a bit into parsing. The idea is to eventually build a very simple language that can calculate mathematical derivative. That is, we want to be able to write things like:
 

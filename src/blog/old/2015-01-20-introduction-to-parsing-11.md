@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-11]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2015-01-17-introduction-to-parsing-10.markdown" %}) we completed our preliminary work. This time, we're finally modify our parser to use the new tree structure we've built.
 

@@ -7,7 +7,6 @@ title: Languages opinion - part three - Javascript and Typescript
 series: ["Languages Opinion"]
 ---
 
-{% postSeries %}
 
 Welcome back to my mini-series about [programming languages](/series/languages-opinion). In this post, we will talk about what is probably the world's most used programming language: JavaScript. We will also discuss TypeScript, given its relevance and usage today.
 

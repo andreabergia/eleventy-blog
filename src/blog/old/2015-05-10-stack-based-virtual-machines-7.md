@@ -9,7 +9,6 @@ aliases: [/stack-based-virtual-machines-7]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-04-26-stack-based-virtual-machines-6.markdown" %}) we have added support for functions calls to our virtual machine. This time, we're going to start working on something a bit different: we're going to write an _assembler_ for our VM!
 

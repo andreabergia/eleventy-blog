@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-7]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-12-21-introduction-to-parsing-6.markdown" %}) we have worked on some preliminary changes to our parser to handle variables. In this part, we will actually make our parser understand variables!
 

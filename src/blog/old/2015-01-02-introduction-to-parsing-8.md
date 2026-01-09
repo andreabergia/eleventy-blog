@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-8]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-12-26-introduction-to-parsing-7.markdown" %}) we made our parser work with variables. In this part, we'll take a step back and start setting up the infrastructure for handling function definitions.
 

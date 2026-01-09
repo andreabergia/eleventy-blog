@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines-5]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-04-07-stack-based-virtual-machines-4.markdown" %}) we have added many instructions to our virtual machine, such as jumps and local variables. It's now time to discuss how we can use these instructions to implement an "if" statement, or a "while" loop.
 

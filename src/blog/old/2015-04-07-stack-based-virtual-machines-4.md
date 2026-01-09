@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines-4]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-03-29-stack-based-virtual-machines-3.markdown" %}) we have implemented quite a few instructions for our virtual machine. In this part, we'll further extend its capabilities by adding some comparison instructions, the ability to do jumps and local variables. The relevant code for this part can be seen [on github](https://github.com/andreabergia/sbvm/tree/article-4).
 

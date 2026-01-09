@@ -7,7 +7,6 @@ title: Languages opinion - part one - JVM
 series: ["Languages Opinion"]
 ---
 
-{% postSeries %}
 
 In this short series of articles, I want to talk about programming languages. I love learning them, and I always try to read up a bit whenever any new language gains significant traction. In these posts, I want to focus on which programming languages I believe have had the most impact in the past decade. Note that this will be a highly opinionated piece, based on my experiences - you might have a lot of different opinions, and that's fine! Feel free to hit me up [on Twitter](https://twitter.com/andreabergia) or [Linkedin](linkedin.com/in/andreabergia/) if you wanna discuss it!
 

@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-13]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2015-01-31-introduction-to-parsing-12.markdown" %}) we have set up the stage for user defined functions. In this (short) part, we'll integrate them with our parser. The relevant commit for this post is [here](https://github.com/andreabergia/parsing-tutorial/commit/09975da4fc1eb92cffbe15844349e2daf5a39734).
 

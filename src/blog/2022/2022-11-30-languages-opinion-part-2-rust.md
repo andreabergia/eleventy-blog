@@ -7,7 +7,6 @@ title: Languages opinion - part two - Rust
 series: ["Languages Opinion"]
 ---
 
-{% postSeries %}
 
 Welcome back to my mini-series about [programming languages](/series/languages-opinion). In this post, we will talk about one of the most interesting programming languages that I have seen in a long while: [Rust](https://www.rust-lang.org/). This is gonna be a rather long post, but I have tried to stay at a pretty high level, to give you an overview of the language, its strength, and its weaknesses as I see them.
 

@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-10]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In this part, as in the [last one]({% ref "2015-01-08-introduction-to-parsing-9.markdown" %}), we are going to work on the preliminary changes required to make our parser work with an AST.
 

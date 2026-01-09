@@ -6,7 +6,6 @@ title: Future Java releases - part two
 series: ["Future Java Releases"]
 ---
 
-{% postSeries %}
 
 In this second post in the [future of Java series](/series/future-java-releases), we will focus on a new feature of the JVM designed to improve performance.
 

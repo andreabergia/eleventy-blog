@@ -251,12 +251,27 @@ main:has(.post-header-section) {
     gap: var(--space-lg);
 }
 
+.post-meta-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
 .post-meta-item {
     display: inline-flex;
     align-items: center;
     gap: 0.4em;
     font-size: var(--font-size-sm);
     color: var(--muted);
+}
+
+.post-series-header {
+    margin-top: var(--space-sm);
+}
+
+.post-series-header .series-box {
+    margin: 0;
 }
 
 .meta-icon {
@@ -645,14 +660,6 @@ main:has(.post-header-section) {
         color: var(--accent);
         opacity: 1;
     }
-}
-
-.series-badge {
-    color: var(--accent);
-    font-size: 0.7em;
-    margin-left: auto;
-    flex-shrink: 0;
-    opacity: 0.9;
 }
 
 .card {

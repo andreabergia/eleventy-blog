@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-4]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-12-02-introduction-to-parsing-3.markdown" %}) we have started making some real changes on our little parser, giving it the ability to handle basic arithmetics such as the four basic operations. In this part, we are going to teach it to handle parenthesis and floating numbers. Let's dive in!
 

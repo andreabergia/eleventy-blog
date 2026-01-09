@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-2]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last post]({% ref "2014-11-24-introduction-to-parsing-1.markdown" %}) we have started working on our parser for our very simple mathematical language. Specifically, we focused on the _lexer_, the part of code that divides the input into tokens. In this part, we are going to extend our lexer a bit and start writing the parser. Let's dive in!
 

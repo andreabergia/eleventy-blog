@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines-3]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-03-22-stack-based-virtual-machines-2.markdown" %}) we have started writing some code for our stack based virtual machine. In this part, we're going to extend the catalog of instructions that our CPU can support. The code for this article can be found on [github](https://github.com/andreabergia/sbvm/tree/article-3).
 

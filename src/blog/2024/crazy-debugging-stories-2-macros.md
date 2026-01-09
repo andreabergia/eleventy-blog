@@ -6,7 +6,6 @@ series: ["Crazy debugging stories"]
 title: Crazy debugging stories - Macros
 ---
 
-{% postSeries %}
 
 Welcome to the second post of my new miniseries about some of the craziest bugs I've had to investigate and debug throughout my career.
 

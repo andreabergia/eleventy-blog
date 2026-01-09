@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-6]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-12-14-introduction-to-parsing-5.markdown" %}) we have taught our parser how to handle function calls. For this time variables were promised... but it turns out we have some details to handle before we can get to them. Onwards!
 

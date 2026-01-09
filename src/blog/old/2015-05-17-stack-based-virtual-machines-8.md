@@ -9,7 +9,6 @@ aliases: [/stack-based-virtual-machines-8]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-05-10-stack-based-virtual-machines-7.markdown" %}) we have written the ANTLR grammar for an assembler for our virtual machine. In this part, we'll write the code connected to the ANTLR-generated parser to actually make our assembler work!
 

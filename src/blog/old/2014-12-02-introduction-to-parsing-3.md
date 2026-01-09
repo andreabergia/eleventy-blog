@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-3]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2014-11-30-introduction-to-parsing-2.markdown" %}) we have continued working on our little parser. Specifically, we have improved the lexer and started creating the parser, so that it is now able to handle simple numbers. Let's teach it some arithmetic now!
 

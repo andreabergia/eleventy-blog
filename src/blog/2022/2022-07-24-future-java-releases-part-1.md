@@ -7,7 +7,6 @@ aliases: [/2022/07/future-java-releases-part-1]
 series: ["Future Java Releases"]
 ---
 
-{% postSeries %}
 
 Java's evolution has sped up in the past few years, ever since the release cadence moved to a two-release-per-year model. Of course, most intermediate releases are little more than preview versions, since they are not [Long Term Supported](https://www.oracle.com/java/technologies/java-se-support-roadmap.html), so most people end up using either Java 8, 11, or 17.
 

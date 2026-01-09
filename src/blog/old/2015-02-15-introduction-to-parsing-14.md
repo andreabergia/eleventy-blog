@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-14]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In this part we'll complete our initial goal, adding the ability to our parser to calculate the symbolic derivative of an user-defined functions. We'll also take a couple of shortcuts to keep the code focused on the parsing, and leave the improvements as "an exercise". :-)
 

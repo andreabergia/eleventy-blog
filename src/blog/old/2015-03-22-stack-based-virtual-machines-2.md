@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines-2]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 After the introduction in [the last part]({% ref "2015-03-08-stack-based-virtual-machines.markdown" %}), it's time to start writing some code and dig into stack based virtual machines.
 

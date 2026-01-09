@@ -6,7 +6,6 @@ series: ["Crazy debugging stories"]
 title: Crazy debugging stories - Quota
 ---
 
-{% postSeries %}
 
 Welcome to a new post in my miniseries about some crazy bugs I've had to investigate and debug throughout my career.
 

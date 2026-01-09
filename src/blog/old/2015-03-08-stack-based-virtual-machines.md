@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In this series we're going to delve a bit into stack based virtual machines. First we're going to see an overview, then we'll build our own toy VM. Next, we're going to see how what we'll build maps to a real CPU. Finally, we'll discuss the most famous of all: the JVM.
 

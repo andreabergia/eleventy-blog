@@ -7,7 +7,6 @@ aliases: [/stack-based-virtual-machines-6]
 series: ["Stack Based Virtual Machines"]
 ---
 
-{% postSeries %}
 
 In [the previous part]({% ref "2015-04-11-stack-based-virtual-machines-5.markdown" %}) we have implemented an "if" and a "while" statement. In this part, we'll extend our virtual machine and add support for function calls!
 

@@ -8,7 +8,6 @@ aliases: [/introduction-to-parsing-12]
 series: ["Introduction to parsing"]
 ---
 
-{% postSeries %}
 
 In the [last part]({% ref "2015-01-20-introduction-to-parsing-11.markdown" %}) we have finished adapting our parser to use our AST structure. This time, we're going to work on supporting user-defined functions. The code changes for this part [are here](https://github.com/andreabergia/parsing-tutorial/commit/8ea58fae948003aa46977e21e2997b41a924c037).
 
