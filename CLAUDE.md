@@ -14,6 +14,8 @@ npm run build
 
 The built site is output to `_site/` directory.
 
+Assume the dev server is always up and running on port 8080.
+
 ### Core Configuration
 
 - **Main config**: `.eleventy.js` (348 lines) - Defines collections, filters, shortcodes, and build settings
