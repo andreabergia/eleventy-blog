@@ -15,7 +15,7 @@ One important thing to note is that each GC algorithm has some memory overhead. 
 
 When you deploy an application to Kubernetes, you should always [specify your CPU and memory required and the limits](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/), to ensure the [Kubernetes scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/) has the most information possible for deciding the nodes to use to schedule your workload. If you are deploying a Java application and you have set a maximum JVM memory, you might think that you should set your maximum _pod_ memory to the same value, so you might do something like in your `Dockerfile`:
 
-```docker
+```dockerfile
 FROM eclipse-temurin:11
 RUN mkdir /opt/app
 COPY japp.jar /opt/app

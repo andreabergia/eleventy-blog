@@ -18,7 +18,7 @@ We had a report from a customer that, when they tried to use that feature, the w
 
 After some time to get all the credentials and instructions to access that weird machine, I started investigating the core file with `gdb`. Apparently, the process was crashing in a function that looked something like this:
 
-```c++ {linenos=true}
+```cpp#
 string buildSearchSql(Transaction &tx, ...) {
     SearchParams params;
     params.tx = tx;

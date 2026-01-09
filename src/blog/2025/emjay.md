@@ -13,7 +13,7 @@ Today I wanna show off my most recent little project, called `emjay`. It's a _ve
 
 This is an example of valid syntax:
 
-```plain
+```plaintext
 fn main() {
     let v = 1000;
     return v + f(3, 2, 1);
@@ -49,7 +49,7 @@ I'm gonna go into some details of the implementation, because I have found that 
 As I've mentioned before, parsing is done via the [`pest`](https://pest.rs/) library. I've written a simple [grammar](https://github.com/andreabergia/emjay/blob/main/src/grammar.pest) for the language. The syntax will be familiar if you have ever used any similar tool such as [antlr]({% ref "2015-02-21-a-grammar-for-json-with-antlr-v4.markdown" %}).
 
 
-```plain
+```plaintext
 statement = _{ (letStatement | assignmentStatement | returnStatement) ~ ";" }
 
 letStatement = { "let" ~ identifier ~ "=" ~ expression }
@@ -95,7 +95,7 @@ As you can see, it maps pretty closely the grammar's result to the AST declarati
 
 As a full example, the following source code:
 
-```plain
+```plaintext
 fn main(x) {
     let a = 2;
     return a + 2 + x;
@@ -104,7 +104,7 @@ fn main(x) {
 
 will generate the following AST:
 
-```plain
+```plaintext
 Function {
   name: "main",
   args: ["x"],
@@ -130,7 +130,7 @@ Function {
 
 The [frontend](https://github.com/andreabergia/emjay/blob/main/src/frontend.rs) is the part of the code that will generate the [IR](https://github.com/andreabergia/emjay/blob/main/src/ir.rs) by walking the AST tree. Let's start with an example: for the code above, the IR will look like this:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 5 {
     0:  mvi  @r0, 2
     1:  mvi  @r1, 2
@@ -172,7 +172,7 @@ Since my "language" doesn't have any sort of control flow statements, the IR gen
 
 The next step in the pipeline is the [optimizer](https://github.com/andreabergia/emjay/blob/main/src/optimization.rs), which performs a few optimizations on the IR. In the example above, given the following IR:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 5 {
     0:  mvi  @r0, 2
     1:  mvi  @r1, 2
@@ -185,7 +185,7 @@ fn main - #args: 1, #reg: 5 {
 
 the optimizer will rewrite it as follows:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 3 {
     0:  mvi  @r0, 4
     1:  mva  @r1, a0
@@ -200,7 +200,7 @@ The optimizer pipeline performs the following passes on the IR:
 
 1) [Constant propagation](https://en.wikipedia.org/wiki/Constant_folding), which is used to simplify IR registers that are known to contain constants; in the example above, it can detect that `r2` will contain a constant. Therefore, in the example above, after this optimization the `add` that fills `r2` is replaced with a `mvi`, and the IR becomes:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 5 {
     0:  mvi  @r0, 2
     1:  mvi  @r1, 2
@@ -213,7 +213,7 @@ fn main - #args: 1, #reg: 5 {
 
 2) Constant de-duplication, a very simple form of [common subexpression elimination](https://en.wikipedia.org/wiki/Common_subexpression_elimination), which only detects that two registers contain the same _constant_. Continuing the example, this pass would remove `r1` because it contains the same value as `r0`.
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 5 {
     0:  mvi  @r0, 2
     1:  mvi  @r2, 4
@@ -225,7 +225,7 @@ fn main - #args: 1, #reg: 5 {
 
 3) [Dead store elimination](https://en.wikipedia.org/wiki/Dead-code_elimination), which removes assignments to registers that are not read anymore. In the example above, it can remove the assignment to `r0` because, after the previous optimization pass, it is not read anymore:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 5 {
     0:  mvi  @r2, 4
     1:  mva  @r3, a0
@@ -236,7 +236,7 @@ fn main - #args: 1, #reg: 5 {
 
 4) And finally it will rename registers so that they are 0-based and dense:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 3 {
     0:  mvi  @r0, 4
     1:  mva  @r1, a0
@@ -325,7 +325,7 @@ for instruction in function.body.iter() {
 
 For the example above, given the IR:
 
-```plain
+```plaintext
 fn main - #args: 1, #reg: 3 {
     0:  mvi  @r0, 4
     1:  mva  @r1, a0
@@ -336,7 +336,7 @@ fn main - #args: 1, #reg: 3 {
 
 the following assembler is generated:
 
-```asm
+```nasm
 stp  x29, x30, [sp, #-16]!
 mov  x29, sp
 movz x9, 4

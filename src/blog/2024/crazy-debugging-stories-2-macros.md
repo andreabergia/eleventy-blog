@@ -22,7 +22,7 @@ With the help of some Google-fu, I determined the issue: a stack overflow. A thr
 
 Initially, I assumed large data structures or arrays were being allocated on the stack, so I asked my colleagues to look for the biggest offenders. A few hours later, they came back empty-handed. The function in question looked innocent enough:
 
-```c++
+```cpp
 void my_function(Transaction &tx, User *user, long table_id, long rec_id) {
     ASSERT(user != null);
     ASSERT(IS_VALID_TABLE_ID(table_id));
@@ -36,7 +36,7 @@ void my_function(Transaction &tx, User *user, long table_id, long rec_id) {
 
 Nothing really seemed to be the problem; no big structs or arrays were being allocated on the stack. After staring at the code for a while, I was left with no clues. So I ended up looking at the disassembly in the debugger... which made me realize something crazy - apparently, each `ASSERT` macro invocation was bumping the stack pointer by about 3.5kb! Here is the macro definition:
 
-```c++
+```cpp
 #define ASSERT(cond) do { if (!(cond)) THROW(UNEXPECTED_ERROR); } while (0)
 ```
 
@@ -44,13 +44,13 @@ By the way, I have never really understood why there was that `do` instead of ju
 
 Anyway, the interesting part was actually in the _other_ macro:
 
-```c++
+```cpp
 #define THROW(message_id) throw ProjectException(message_id)
 ```
 
 Which meant that the function actually looked like this:
 
-```c++
+```cpp
 void my_function(Transaction &tx, User *user, long table_id, long rec_id) {
     do { if (!(user != null)) { throw ProjectException(UNEXPECTED_ERROR); } } while (0);
     do { if (!(IS_VALID_TABLE_ID(table_id))) { throw ProjectException(UNEXPECTED_ERROR); } } while (0);
@@ -65,7 +65,7 @@ A common practice in this code base was to use _a ton_ of assertions everywhere 
 
 The last piece of the puzzle involved looking at the class, which was something like the following:
 
-```c++
+```cpp
 class ProjectException {
 public:
     ProjectException(message_id) {
@@ -87,7 +87,7 @@ So, the sum of all these questionable decisions and bad practices meant that eac
 
 The fix was super simple - I just replaced the `THROW` macro definition with a normal function:
 
-```c++
+```cpp
 void THROW(int message_id) {
     throw ProjectException(message_id);
 }
@@ -95,7 +95,7 @@ void THROW(int message_id) {
 
 Therefore, now the caller functions would just look like this:
 
-```c++
+```cpp
 void my_function(Transaction &tx, User *user, long table_id, long rec_id) {
     do { if (!(user != null)) { THROW(UNEXPECTED_ERROR); } } while (0);
     do { if (!(IS_VALID_TABLE_ID(table_id))) { THROW(UNEXPECTED_ERROR); } } while (0);

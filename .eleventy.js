@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
 const { DateTime } = require("luxon");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const syntaxHighlight = require("@pborenstein/eleventy-md-syntax-highlight");
 const site = require("./src/_data/site.json");
 const {
   aliasToPermalink,
@@ -93,7 +93,7 @@ const loadPreviewPayload = (src) => {
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, { showLineNumbers: false });
   eleventyConfig.addWatchTarget("src/_data/previews");
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {

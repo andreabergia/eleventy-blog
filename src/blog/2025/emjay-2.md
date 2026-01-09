@@ -12,7 +12,7 @@ In this post, I am following up on the explanation of my simple JIT ~~compiler~~
 
 Imagine we are JIT-compiling the following program:
 
-```plain
+```plaintext
 fn f() {
     return 1 + g(2);
 }
@@ -48,7 +48,7 @@ Pretty often trampolines are used to _lazily_ compile functions as necessary; fo
 
 For the example above, the frontend will assign the id `0` to `f` and `1` to `g`. The generated IR for the function `f` will then be:
 
-```plain
+```plaintext
 fn f - #args: 0, #reg: 4 {
     0:  mvi  @r0, 1
     1:  mvi  @r2, 2
@@ -73,7 +73,7 @@ I have not deviated from the standard function call; arguments go in `x0`..`x7`,
 
 The code in the backend, when generating a function call, uses a pretty "naive" implementation where _all_ the registers that are used in the function get saved, even if they are not actually used at that moment. Continuing the example above, the generated assembler for `f` becomes:
 
-```asm
+```nasm
 # standard function prologue
 stp  x29, x30, [sp, #-64]!
 mov  x29, sp

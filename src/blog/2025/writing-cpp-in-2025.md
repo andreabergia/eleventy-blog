@@ -53,7 +53,7 @@ Having to split declaration and definitions really feels legacy. I get that, onc
 
 On to the next complaint! I wrote a simple class that needed a destructor. The linter helpfully suggested that I probably wanted to also add some constructors and assignment operators, so it ended up creating the following:
 
-```c++
+```cpp
   MyClass(const MyClass &) = default;
   MyClass &operator=(const MyClass &) = default;
   MyClass(MyClass &&) = default;

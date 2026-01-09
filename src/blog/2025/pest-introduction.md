@@ -63,7 +63,7 @@ letStatementInitializer = { identifier ~ "=" ~ expression }
 
 The (slightly simplified) code I use to walk through the parse tree and produce my AST is the following:
 
-```rust {linenos=inline}
+```rust#
 fn parse_let_statement(
     rule: Pair<'_, Rule>
 ) -> ParseResult<Box<Statement>> {

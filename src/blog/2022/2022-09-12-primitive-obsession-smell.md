@@ -131,7 +131,7 @@ The downside here is that, if you were using the `Book` class from Java, you wou
 
 If you are using C++, this is a common pattern - and again, it comes without any memory overhead. The wrapper type (generally modelled as `struct`) would have the same memory layout as the wrapped data type:
 
-```c++
+```cpp
 struct Isbn {
     std::string value;
 }
@@ -165,7 +165,7 @@ fn main() {
 
 you would get this _fantastic_ error message from the compiler:
 
-```shell
+```bash
 error[E0308]: mismatched types
  --> src/main.rs:8:44
   |

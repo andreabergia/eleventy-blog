@@ -1,7 +1,6 @@
 # TODO 
 
-- "blog" page
-  - code rendering (test)
+- poor whitespace around titles in http://localhost:8080/blog/2024/03/how-is-this-blog-built/
 - homepage
 - tags
 - series link

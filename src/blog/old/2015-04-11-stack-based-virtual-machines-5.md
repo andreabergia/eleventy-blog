@@ -100,7 +100,7 @@ int main()
 
 When compiled (with a `gcc test.c`) and then disassembled (`objdump -d a.out`) on my machine, it produces this output:
 
-```asm
+```nasm
 ; skipped code
   400508:	8b 45 f4             	mov    -0xc(%rbp),%eax
   40050b:	3b 45 f8             	cmp    -0x8(%rbp),%eax
