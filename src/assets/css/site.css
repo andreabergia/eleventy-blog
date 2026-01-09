@@ -29,6 +29,7 @@
     --max-width: 60rem;
 
     --space-sm: 0.5rem;
+    --space-ss: 0.75rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-xl: 2.5rem;
@@ -549,7 +550,7 @@ main:has(.post-header-section) {
 }
 
 .series-header {
-    background: var(--surface);
+    background: var(--surface-alt);
     padding: var(--space-md) var(--space-lg);
     border-bottom: 1px solid var(--border);
     display: flex;
@@ -585,7 +586,8 @@ main:has(.post-header-section) {
 }
 
 .series-item {
-    padding: var(--space-sm) var(--space-lg);
+    margin: 0;
+    padding: var(--space-ss) var(--space-lg);
     border-bottom: 1px solid var(--border);
     display: flex;
     gap: var(--space-md);
@@ -608,12 +610,15 @@ main:has(.post-header-section) {
     font-size: var(--font-size-xs);
     opacity: 0.6;
     min-width: 1.8em;
+    flex-shrink: 0;
+    font-weight: 700;
 }
 
 .series-item a {
     color: var(--muted);
     text-decoration: none;
     transition: color 150ms ease;
+    flex: 1;
 
     &:hover {
         color: var(--text);
@@ -623,26 +628,31 @@ main:has(.post-header-section) {
 .series-item-current {
     background: var(--surface);
     position: relative;
+    border-left: 4px solid var(--accent);
+    padding-left: calc(var(--space-lg) - 4px);
 
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 3px;
-        background: var(--accent);
+    &:hover {
+        background: var(--surface);
     }
 
     .series-title {
         color: var(--text);
-        font-weight: 600;
+        font-weight: 700;
+        flex: 1;
     }
 
     .series-number {
         color: var(--accent);
         opacity: 1;
     }
+}
+
+.series-badge {
+    color: var(--accent);
+    font-size: 0.7em;
+    margin-left: auto;
+    flex-shrink: 0;
+    opacity: 0.9;
 }
 
 .card {
@@ -773,6 +783,10 @@ main:has(.post-header-section) {
             flex-direction: column;
             gap: var(--space-sm);
         }
+    }
+
+    .series-item {
+        gap: var(--space-sm);
     }
 }
 
