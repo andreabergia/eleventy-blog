@@ -336,7 +336,7 @@ fn main - #args: 1, #reg: 3 {
 
 the following assembler is generated:
 
-```nasm
+```arm-asm
 stp  x29, x30, [sp, #-16]!
 mov  x29, sp
 movz x9, 4

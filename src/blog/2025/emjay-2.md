@@ -73,7 +73,7 @@ I have not deviated from the standard function call; arguments go in `x0`..`x7`,
 
 The code in the backend, when generating a function call, uses a pretty "naive" implementation where _all_ the registers that are used in the function get saved, even if they are not actually used at that moment. Continuing the example above, the generated assembler for `f` becomes:
 
-```nasm
+```arm-asm
 # standard function prologue
 stp  x29, x30, [sp, #-64]!
 mov  x29, sp
