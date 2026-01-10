@@ -595,7 +595,7 @@ main:has(.post-header-section) {
     color: var(--muted);
     white-space: nowrap;
 
-    &:hover {
+    &:hover:not(.series-nav-disabled) {
         color: var(--accent);
     }
 }
