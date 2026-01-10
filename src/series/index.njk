@@ -4,17 +4,25 @@ title: Series
 permalink: /series/index.html
 ---
 
-<h1>Series</h1>
+<div class="post-header-section">
+  <div class="post-header-content">
+    <h1>Series</h1>
+  </div>
+</div>
 
-{% if collections.series and collections.series.length %}
-<ul class="series-list">
-  {% for series in collections.series %}
-  <li>
-    <a href="/series/{{ series.slug }}/">{{ series.name }}</a>
-    <span class="series-count">{{ series.posts | length }} posts</span>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No series have been migrated yet.</p>
-{% endif %}
+<div class="post-content-section">
+  <div class="post-content-wrapper">
+    {% if collections.series and collections.series.length %}
+    <ul class="series-list">
+      {% for series in collections.series %}
+      <li>
+        <a href="/series/{{ series.slug }}/">{{ series.name }}</a>
+        <span class="series-count">{{ series.posts | length }} posts</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No series have been migrated yet.</p>
+    {% endif %}
+  </div>
+</div>
