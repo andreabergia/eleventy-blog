@@ -19,8 +19,8 @@
 - Catalogue static assets, custom CSS/JS, and third-party services (Disqus, GoatCounter, RSS).
 
 ## 1. Eleventy Project Bootstrap
-- Initialize Eleventy project in this repo with `package.json`, `.eleventy.js`, and basic directory structure (`src/` vs `_site/` output).
-- Configure Eleventy to read Markdown/front matter from a `content/` (or `src/blog/`) directory and output to `_site/`.
+- Initialize Eleventy project in this repo with `package.json`, `.eleventy.js`, and basic directory structure (`src/` vs `dist/` output).
+- Configure Eleventy to read Markdown/front matter from a `content/` (or `src/blog/`) directory and output to `dist/`.
 - Enable passthrough file copy for static files and assets directory equivalents.
 
 ## 2. Global Configuration & Data Cascade
@@ -90,7 +90,7 @@ _Status: Not started._
 - Check markdown rendering differences (shortcodes, code fences, markdown-it vs Goldmark quirks).
 - Validate pagination, tag/series pages, RSS feed, and featured/recent lists.
 - Run link checker or Eleventy’s output validation to catch broken internal/external links.
-- Add a quick regression command (e.g., `npm run build && linkinator _site`) to spot template or taxonomy breakages before commits.
+- Add a quick regression command (e.g., `npm run build && linkinator dist`) to spot template or taxonomy breakages before commits.
 - Set up automated builds/tests (npm scripts, Netlify/Vercel preview) and document run commands.
 
 ## 11. Launch & Cleanup

@@ -12,7 +12,7 @@ npm run dev
 npm run build
 ```
 
-The built site is output to `_site/` directory.
+The built site is output to `dist/` directory.
 
 Assume the dev server is always up and running on port 8080.
 
