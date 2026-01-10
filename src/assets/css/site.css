@@ -7,6 +7,8 @@
     --font-mono:
         "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
+    --font-heading-letter-spacing: 0.02em;
+
     --bg: #161616;
     --surface: #212121;
     --surface-alt: #191919;
@@ -111,7 +113,7 @@ h3,
 h4 {
     color: var(--text);
     font-family: var(--font-heading);
-    letter-spacing: 0.02em;
+    letter-spacing: var(--font-heading-letter-spacing);
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -294,9 +296,9 @@ main:has(.post-header-section) {
 
 .post-tag {
     font-family: var(--font-heading);
+    letter-spacing: var(--font-heading-letter-spacing);
     color: var(--muted);
     text-decoration: none;
-    letter-spacing: 0.02em;
 }
 
 .post-tag:hover {
@@ -348,9 +350,9 @@ main:has(.post-header-section) {
     .site-title {
         display: inline-flex;
         font-family: var(--font-heading);
+        letter-spacing: var(--font-heading-letter-spacing);
         font-size: clamp(1.6rem, 3vw, 2rem);
         color: var(--text);
-        letter-spacing: 0.04em;
         text-decoration: none;
         text-transform: uppercase;
     }
@@ -371,9 +373,9 @@ main:has(.post-header-section) {
 .site-nav a {
     color: var(--muted);
     font-family: var(--font-heading);
+    letter-spacing: var(--font-heading-letter-spacing);
     font-weight: 400;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
-    letter-spacing: 0.05em;
     text-transform: uppercase;
     padding: 0.25rem 0.5rem;
     text-decoration: none;
@@ -587,6 +589,7 @@ main:has(.post-header-section) {
     gap: var(--space-lg);
     flex-shrink: 0;
     font-family: var(--font-heading);
+    letter-spacing: var(--font-heading-letter-spacing);
 }
 
 .series-nav-link {
