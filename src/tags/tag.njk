@@ -9,35 +9,17 @@ eleventyComputed:
   title: "Tag: {{ tag.name }}"
 ---
 
-<div class="post-header-section">
-  <div class="post-header-content">
-    <h1>#{{ tag.name }}</h1>
-    {% if tag.posts and tag.posts.length %}
-    <div class="post-metadata">
-      <div class="post-meta-row">
-        <span class="post-meta-item">
-          <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/></svg>
-          {{ tag.posts | length }} posts tagged
-        </span>
-      </div>
-    </div>
-    {% endif %}
-  </div>
-</div>
+<h1>Tag: {{ tag.name }}</h1>
 
-<div class="post-content-section">
-  <div class="post-content-wrapper">
-    {% if tag.posts and tag.posts.length %}
-    <ul class="post-list post-list--stacked">
-      {% for post in tag.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | readableDate }}</span>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p>There are no posts for this tag yet.</p>
-    {% endif %}
-  </div>
-</div>
+{% if tag.posts and tag.posts.length %}
+<ul class="post-list">
+  {% for post in tag.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <span class="post-meta">{{ post.date | readableDate }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no posts for this tag yet.</p>
+{% endif %}
