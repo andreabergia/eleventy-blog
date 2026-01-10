@@ -26,7 +26,7 @@
       <div class="post-tags">
         {% for tag in tags %}
           {% if tag.toLowerCase() != "blog" %}
-          <a href="/tags/{{ tag | slugify }}/" class="tag-mono">#{{ tag | lower }}</a>
+          <a href="/tags/{{ tag | slugify }}/" class="post-tag">#{{ tag | lower }}</a>
           {% endif %}
         {% endfor %}
       </div>

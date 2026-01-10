@@ -291,15 +291,15 @@ main:has(.post-header-section) {
     gap: var(--space-md);
 }
 
-.tag-mono {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+.post-tag {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
     color: var(--muted);
     text-decoration: none;
     letter-spacing: 0.02em;
 }
 
-.tag-mono:hover {
+.post-tag:hover {
     color: var(--accent);
 }
 
