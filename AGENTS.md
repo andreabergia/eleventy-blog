@@ -89,10 +89,7 @@ The build creates several collections for organizing content:
    - Displays title, description, author, publisher, favicon
    - Graceful fallback for missing data
 
-2. **`{% postSeries %}`** - Renders series navigation box
-   - Shows all posts in current series
-   - Highlights current post
-   - Links to series landing page
+2. **`{% postSeries %}`** - Renders series navigation box in header
 
 3. **`{% ref "path/to/post" %}`** - Resolves internal post references
    - Accepts multiple formats: filename, relative path, full path
@@ -116,38 +113,9 @@ base.njk (root)
 └── redirect.njk (alias redirects)
 ```
 
-### Content Utilities (`lib/content-utils.js`)
-
-Key functions for working with content:
-
-- **`slugify(value)`** - URL-safe slug generation (NFKD normalization, lowercase, hyphens)
-- **`normalizeList(value)`** - Converts single values or arrays to normalized arrays
-- **`getAliases(data)`** - Extracts aliases from frontmatter
-- **`getSeriesList(data)`** - Extracts series from frontmatter
-- **`aliasToPermalink(alias)`** - Converts alias to permalink format
-- **`derivePostSlug(data)`** - Derives post slug from frontmatter or filename
-
-### Adding New Content
-
-**New Blog Post**:
-1. Create file in `src/blog/YYYY/YYYY-MM-DD-title.md`
-2. Add frontmatter with date, title, tags
-3. Write content in Markdown
-4. Run `npm run dev` to preview
-
-**New Series**:
-1. Add `series: "Series Name"` to post frontmatter
-2. Series collection automatically created
-3. Add `{% postSeries %}` to post content for navigation
-
-**External Link Preview**:
-1. Create `src/_data/previews/domain-path-slug.json`
-2. Add metadata: `url`, `title`, `description`, `author`, `publisher`, `logo.url`
-3. Use `{% previewExternal "domain-path-slug" %}` in content
-
 ### Styling
 
-Main stylesheet: `src/assets/css/site.css` (526 lines)
+Main stylesheet: `src/assets/css/site.css`
 - Dark theme with CSS variables
 - Typography: Bebas Neue (headings), Inter (body), JetBrains Mono (code)
 - Responsive design patterns
@@ -176,3 +144,10 @@ Accepts multiple path formats:
 - Filename: `post.md`
 - Relative: `./2024/post.md`
 - Path from blog: `2024/12-01-post.md`
+
+## Rules
+
+- Do not use CSS transitions
+- In CSS, strive to reuse existing variable if they have the same semantics
+- CSS class name should _not_ have a double dash (no `link--active`)
+- **Always** validate the generated html by building the website and inspecting the generated file
