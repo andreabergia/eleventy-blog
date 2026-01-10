@@ -4,17 +4,25 @@ title: Tags
 permalink: /tags/index.html
 ---
 
-<h1>Tags</h1>
+<div class="post-header-section">
+  <div class="post-header-content">
+    <h1>Tags</h1>
+  </div>
+</div>
 
-{% if collections.tagsList and collections.tagsList.length %}
-<ul class="tag-grid">
-  {% for tag in collections.tagsList %}
-  <li class="tag-card">
-    <a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a>
-    <span class="tag-count">{{ tag.posts | length }} posts</span>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No tags have been published yet.</p>
-{% endif %}
+<div class="post-content-section">
+  <div class="post-content-wrapper">
+    {% if collections.tagsList and collections.tagsList.length %}
+    <ul class="tag-grid">
+      {% for tag in collections.tagsList %}
+      <li class="tag-card">
+        <a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a>
+        <span class="tag-count">{{ tag.posts | length }} posts</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tags have been published yet.</p>
+    {% endif %}
+  </div>
+</div>
