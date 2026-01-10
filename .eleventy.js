@@ -371,7 +371,7 @@ module.exports = function (eleventyConfig) {
     return `
 <nav class="series-box" aria-labelledby="series-title">
   <div class="series-header">
-    <span class="series-kicker">Series</span>
+    <span class="series-kicker">Part of series</span>
     <h3 id="series-title" class="series-name">
         <a href="/series/${slug}/">${escapeHtml(displayName)}</a>
     </h3>
