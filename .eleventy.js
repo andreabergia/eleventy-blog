@@ -342,43 +342,36 @@ module.exports = function (eleventyConfig) {
         : null);
 
     if (!group) {
-      return `<div class="series-box series-box--missing">This post claims to be part of the "${escapeHtml(
-        displayName
-      )}" series, but the series metadata has not been generated.</div>`;
+      throw new Error(`This post claims to be part of the ${displayName} series, but the series metadata has not been generated`);
     }
 
     const currentUrl = data.page?.url;
-    const listItems = group.posts
-      .map((post, index) => {
-        const isCurrent = post.url === currentUrl;
-        const className = isCurrent ? "series-item series-item-current" : "series-item";
-        const number = `<span class="series-number">${(index + 1).toString().padStart(2, '0')}</span>`;
+    const currentIndex = group.posts.findIndex((post) => post.url === currentUrl);
+    const totalPosts = group.posts.length;
+    const partNumber = currentIndex + 1;
 
-        if (isCurrent) {
-          return `<li class="${className}">
-            ${number}
-            <span class="series-title">${escapeHtml(post.data.title || "Untitled post")}</span>
-          </li>`;
-        }
+    // Get previous and next posts for navigation
+    const prevPost = currentIndex > 0 ? group.posts[currentIndex - 1] : null;
+    const nextPost = currentIndex < totalPosts - 1 ? group.posts[currentIndex + 1] : null;
 
-        return `<li class="${className}">
-            ${number}
-            <a href="${post.url}" class="series-link">${escapeHtml(post.data.title || "Untitled post")}</a>
-        </li>`;
-      })
-      .join("");
+    const prevLink = prevPost
+      ? `<a href="${prevPost.url}" class="series-nav-link series-nav-prev" title="${escapeHtml(prevPost.data.title || 'Previous post')}">← Previous</a>`
+      : '<span class="series-nav-link series-nav-disabled">← Previous</span>';
+
+    const nextLink = nextPost
+      ? `<a href="${nextPost.url}" class="series-nav-link series-nav-next" title="${escapeHtml(nextPost.data.title || 'Next post')}">Next →</a>`
+      : '<span class="series-nav-link series-nav-disabled">Next →</span>';
 
     return `
-<nav class="series-box" aria-labelledby="series-title">
-  <div class="series-header">
-    <span class="series-kicker">Part of series</span>
-    <h3 id="series-title" class="series-name">
-        <a href="/series/${slug}/">${escapeHtml(displayName)}</a>
-    </h3>
+<nav class="series-indicator" aria-label="Series navigation">
+  <div class="series-info">
+    Part ${partNumber} of ${totalPosts} in series
+    <a href="/series/${slug}/" class="series-link">${escapeHtml(displayName)}</a>
   </div>
-  <ul class="series-posts">
-    ${listItems}
-  </ul>
+  <div class="series-nav">
+    ${prevLink}
+    ${nextLink}
+  </div>
 </nav>`.trim();
   });
 
