@@ -539,13 +539,11 @@ main:has(.post-header-section) {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow);
     padding: var(--space-md) var(--space-lg);
-    display: grid;
-    gap: var(--space-sm);
 
     li {
         display: flex;
         justify-content: space-between;
-        gap: var(--space-sm);
+        gap: var(--space-md);
         padding: var(--space-md) 0;
         border-bottom: 1px solid var(--border);
 
