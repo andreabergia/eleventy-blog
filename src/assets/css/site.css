@@ -15,6 +15,7 @@
     --muted: #cdd0dd;
     --accent: #fab71c;
     --accent-contrast: #0d0f16;
+    --accent2: #ee3856;
 
     --syntax-comment: #cdd0dd;
     --syntax-number: #79c0ff;
@@ -237,7 +238,7 @@ main:has(.post-header-section) {
     margin-top: 0;
     margin-bottom: var(--space-md);
     text-decoration: underline;
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--accent2);
     text-decoration-thickness: 2px;
     text-underline-offset: 0.22em;
 }
@@ -245,7 +246,7 @@ main:has(.post-header-section) {
 .post-metadata {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 
 .post-meta-row {
@@ -293,7 +294,6 @@ main:has(.post-header-section) {
 
 .post-tag {
     font-family: var(--font-heading);
-    font-size: var(--font-size-sm);
     color: var(--muted);
     text-decoration: none;
     letter-spacing: 0.02em;
@@ -551,9 +551,10 @@ main:has(.post-header-section) {
 }
 
 .series-indicator {
+    margin-top: var(--space-md);
     background: var(--surface-alt);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent2);
     border-radius: var(--radius-md);
     padding: var(--space-md) var(--space-lg);
     display: flex;
@@ -561,16 +562,6 @@ main:has(.post-header-section) {
     justify-content: space-between;
     gap: var(--space-lg);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-        border-left-color: var(--accent-bright, var(--accent));
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    }
-}
-
-.series-indicator--missing {
-    border-left-color: var(--warning, #ffa500);
-    background: var(--surface-alt);
 }
 
 .series-info {
