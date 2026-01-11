@@ -1,12 +1,12 @@
 ---
-permalink: /feed.xml
+permalink: /index.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }}</title>
   <subtitle>{{ site.tagline }}</subtitle>
-  <link href="{{ site.baseUrl }}feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.baseUrl }}index.xml" rel="self" type="application/atom+xml"/>
   <link href="{{ site.baseUrl }}" rel="alternate" type="text/html"/>
   {%- set latestPost = collections.posts[collections.posts.length - 1] -%}
   <updated>{{ latestPost.date | dateIso }}</updated>

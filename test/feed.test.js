@@ -4,13 +4,13 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DIST_DIR = path.join(__dirname, '..', 'dist');
-const FEED_PATH = path.join(DIST_DIR, 'feed.xml');
+const FEED_PATH = path.join(DIST_DIR, 'index.xml');
 
-test('feed.xml file exists', () => {
-  assert.ok(fs.existsSync(FEED_PATH), 'feed.xml should exist in dist directory');
+test('index.xml file exists', () => {
+  assert.ok(fs.existsSync(FEED_PATH), 'index.xml should exist in dist directory');
 });
 
-test('feed.xml is valid XML', () => {
+test('index.xml is valid XML', () => {
   const feedContent = fs.readFileSync(FEED_PATH, 'utf-8');
 
   // Should start with XML declaration
@@ -30,7 +30,7 @@ test('feed has required metadata', () => {
   // Required Atom feed elements
   assert.ok(feedContent.includes('<title>'), 'Feed should have a title');
   assert.ok(feedContent.includes('<subtitle>'), 'Feed should have a subtitle');
-  assert.ok(feedContent.includes('<link href="https://andreabergia.com/feed.xml" rel="self"'),
+  assert.ok(feedContent.includes('<link href="https://andreabergia.com/index.xml" rel="self"'),
     'Feed should have self link');
   assert.ok(feedContent.includes('<link href="https://andreabergia.com/" rel="alternate"'),
     'Feed should have alternate link');
