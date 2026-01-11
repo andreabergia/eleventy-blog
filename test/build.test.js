@@ -29,3 +29,28 @@ test('generated homepage page exists', () => {
   const indexPath = path.join(DIST_DIR, 'index.html');
   assert.ok(fs.existsSync(indexPath));
 });
+
+test('alias redirect pages are generated', () => {
+  const aliasPaths = [
+    path.join(DIST_DIR, 'about-me', 'index.html'),
+    path.join(DIST_DIR, 'about', 'about-me', 'index.html'),
+  ];
+
+  aliasPaths.forEach(aliasPath => {
+    assert.ok(fs.existsSync(aliasPath), `Alias page should exist at ${aliasPath}`);
+  });
+});
+
+test('alias pages contain correct redirect metadata', () => {
+  const aliasPath = path.join(DIST_DIR, 'about-me', 'index.html');
+  const html = fs.readFileSync(aliasPath, 'utf-8');
+
+  assert.ok(html.includes('<meta http-equiv="refresh" content="0; url=/about/">'),
+    'Should contain meta refresh tag');
+  assert.ok(html.includes('<link rel="canonical" href="/about/">'),
+    'Should contain canonical link');
+  assert.ok(html.includes('<title>About me</title>'),
+    'Should contain page title');
+  assert.ok(html.includes('Redirecting to <a href="/about/">/about/</a>'),
+    'Should contain redirect message');
+});

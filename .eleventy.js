@@ -414,7 +414,7 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       output: "dist"
     },
-    templateFormats: ["md", "markdown", "njk", "html"],
+    templateFormats: ["md", "markdown", "njk", "html", "11ty.js"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
   };
