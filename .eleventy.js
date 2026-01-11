@@ -248,7 +248,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("recentPosts", (collectionApi) => {
     const posts = collectPosts(collectionApi);
-    return posts.slice(-10).reverse();
+    return posts.slice(-5).reverse();
   });
 
   eleventyConfig.addCollection("aliases", (collectionApi) => {
