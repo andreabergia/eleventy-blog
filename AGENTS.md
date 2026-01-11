@@ -10,11 +10,18 @@ npm run dev
 
 # Build for production
 npm run build
+
+# Run unit tests
+npm test
 ```
 
 The built site is output to `dist/` directory.
 
 Assume the dev server is always up and running on port 8080.
+
+### Unit Tests
+
+Tests are located in the `test/` directory and run using Node's built-in test runner. The test suite includes basic smoke tests - not full coverage, which is out of scope. Tests expect the site to be built (run `npm run build` before `npm test`).
 
 ### Core Configuration
 
