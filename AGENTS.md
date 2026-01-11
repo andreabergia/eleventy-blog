@@ -151,3 +151,5 @@ Accepts multiple path formats:
 - In CSS, strive to reuse existing variable if they have the same semantics
 - CSS class name should _not_ have a double dash (no `link--active`)
 - **Always** validate the generated html by building the website and inspecting the generated file
+- Always run a build and unit tests before saying "done"
+
