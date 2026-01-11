@@ -19,7 +19,7 @@
     { "name": "Series", "url": "/series/" }
   ],
   "social": [
-    { "name": "RSS", "icon": "fa fa-rss fa-2x", "url": "/index.xml" },
+    { "name": "RSS", "icon": "fa fa-rss fa-2x", "url": "/feed.xml" },
     {
       "name": "GitHub",
       "icon": "fa fa-github fa-2x",
