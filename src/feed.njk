@@ -1,0 +1,38 @@
+---
+permalink: /index.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }}</title>
+  <subtitle>{{ site.tagline }}</subtitle>
+  <link href="{{ site.baseUrl }}index.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.baseUrl }}" rel="alternate" type="text/html"/>
+  {%- set latestPost = collections.posts[collections.posts.length - 1] -%}
+  <updated>{{ latestPost.date | dateIso }}</updated>
+  <id>{{ site.baseUrl }}</id>
+  <author>
+    <name>{{ site.author.name }}</name>
+    <email>{{ site.author.email }}</email>
+  </author>
+  {%- set allPosts = collections.posts | reverse -%}
+  {%- for post in allPosts.slice(0, 25) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ site.baseUrl }}{{ post.url | replace('/', '', 1) }}" rel="alternate" type="text/html"/>
+    <id>{{ site.baseUrl }}{{ post.url | replace('/', '', 1) }}</id>
+    <updated>{{ post.date | dateIso }}</updated>
+    <published>{{ post.date | dateIso }}</published>
+    <author>
+      <name>{{ site.author.name }}</name>
+      <email>{{ site.author.email }}</email>
+    </author>
+    <content type="html"><![CDATA[{{ post.content | stripImagePlaceholders }}]]></content>
+    {%- for tag in post.data.tags %}
+    {%- if tag and tag | lower != "blog" %}
+    <category term="{{ tag | slugify }}" label="{{ tag }}"/>
+    {%- endif %}
+    {%- endfor %}
+  </entry>
+  {%- endfor %}
+</feed>

@@ -173,6 +173,11 @@ module.exports = function (eleventyConfig) {
     return Math.ceil(words / wordsPerMinute);
   });
 
+  eleventyConfig.addFilter("stripImagePlaceholders", (content) => {
+    if (!content) return "";
+    return content.replace(/<eleventy-image[^>]*><\/eleventy-image>/g, "");
+  });
+
   eleventyConfig.addCollection("posts", (collectionApi) => {
     const posts = collectPosts(collectionApi);
     const lookup = new Map();
