@@ -275,10 +275,6 @@ main:has(.post-header-section) {
     color: var(--muted);
 }
 
-.post-series-indicator {
-    margin: 0;
-}
-
 .meta-icon {
     width: 1em;
     height: 1em;
@@ -423,52 +419,62 @@ main:has(.post-header-section) {
 }
 
 .post-list--stacked {
+    display: block;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    background: var(--surface-alt);
-    padding: var(--space-sm) var(--space-lg);
+    background: var(--surface);
     box-shadow: var(--shadow);
 
     li {
-        padding: var(--space-sm) 0;
+        display: block;
         border-bottom: 1px solid var(--border);
+        margin: 0;
+
+        &:first-child {
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+        }
 
         &:last-child {
             border-bottom: 0;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+
+        &:only-child {
+            border-radius: var(--radius-md);
+        }
+
+        &:hover {
+            background: var(--surface-alt);
         }
     }
 
     a {
+        display: block;
+        padding: var(--space-sm) var(--space-md);
         text-decoration: none;
+        color: var(--text);
+        margin: 0;
+        background: transparent;
     }
 
-    a:hover {
+    li:hover .post-title {
         color: var(--accent);
     }
 
+    .post-title {
+        display: block;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+
     .post-meta {
+        display: block;
         font-family: var(--font-mono);
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--muted);
-        order: -1;
         font-size: var(--font-size-xs);
-    }
-}
-
-.blog-index {
-    .list-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: var(--space-sm);
-        flex-wrap: wrap;
-        margin-bottom: var(--space-md);
-    }
-
-    .list-count {
-        color: var(--muted);
-        font-size: var(--font-size-sm);
+        margin-bottom: var(--space-xs);
     }
 }
 
@@ -479,24 +485,30 @@ main:has(.post-header-section) {
 }
 
 .tag-card {
-    background: var(--surface-alt);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-sm) var(--space-md);
     box-shadow: var(--shadow);
 
     &:hover {
+        background: var(--surface-alt);
         border-color: var(--accent);
     }
 
     a {
+        display: block;
+        padding: var(--space-sm) var(--space-md);
         color: var(--text);
-        font-weight: 700;
-        letter-spacing: 0.02em;
         text-decoration: none;
     }
 
-    a:hover {
+    .tag-name {
+        display: block;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+    }
+
+    &:hover .tag-name {
         color: var(--accent);
     }
 
@@ -508,47 +520,11 @@ main:has(.post-header-section) {
     }
 }
 
-.series-list {
-    background: var(--surface-alt);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow);
-    padding: var(--space-sm) var(--space-lg);
-
-    li {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--space-md);
-        padding: var(--space-sm) 0;
-        border-bottom: 1px solid var(--border);
-
-        &:last-child {
-            border-bottom: 0;
-        }
-    }
-
-    a {
-        color: var(--text);
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: var(--accent);
-    }
-
-    .series-count {
-        color: var(--muted);
-        font-size: var(--font-size-sm);
-        white-space: nowrap;
-    }
-}
-
 .series-indicator {
     margin-top: var(--space-md);
     background: var(--surface-alt);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent2);
+    border-left: 4px solid var(--accent);
     border-radius: var(--radius-md);
     padding: var(--space-md) var(--space-lg);
     display: flex;
@@ -774,10 +750,6 @@ main:has(.post-header-section) {
     .site-nav {
         width: 100%;
         justify-content: center;
-    }
-
-    .series-list li {
-        align-items: baseline;
     }
 
     .site-footer {

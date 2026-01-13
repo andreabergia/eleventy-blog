@@ -13,11 +13,13 @@ permalink: /series/index.html
 <div class="post-content-section">
   <div class="post-content-wrapper">
     {% if collections.series and collections.series.length %}
-    <ul class="series-list">
+    <ul class="tag-grid">
       {% for series in collections.series %}
-      <li>
-        <a href="/series/{{ series.slug }}/">{{ series.name }}</a>
-        <span class="series-count">{{ series.posts | length }} posts</span>
+      <li class="tag-card">
+        <a href="/series/{{ series.slug }}/">
+          <span class="tag-name">{{ series.name }}</span>
+          <span class="tag-count">{{ series.posts | length }} posts</span>
+        </a>
       </li>
       {% endfor %}
     </ul>
