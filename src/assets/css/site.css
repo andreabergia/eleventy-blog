@@ -952,3 +952,33 @@ pre[class*="language-"].line-numbers > code {
     font-size: 1.1rem;
     text-decoration: none;
 }
+
+/* Header Anchor */
+.header-anchor {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .header-anchor {
+        position: relative;
+    }
+
+    .header-anchor::before {
+        content: "#";
+        display: inline-block;
+        position: absolute;
+        left: -1.2em;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        color: var(--accent);
+    }
+
+    .header-anchor:hover::before {
+        opacity: 1;
+    }
+}

@@ -3,6 +3,7 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@pborenstein/eleventy-md-syntax-highlight");
+const markdownItAnchor = require("markdown-it-anchor");
 const site = require("./src/_data/site.json");
 const {
   aliasToPermalink,
@@ -99,6 +100,14 @@ module.exports = function (eleventyConfig) {
 
   // Add markdown-it image override
   eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib.use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.headerLink({
+        class: "header-anchor",
+      }),
+      level: [2, 3, 4],
+      slugify: slugify
+    });
+
     const defaultImageRenderer = mdLib.renderer.rules.image;
 
     mdLib.renderer.rules.image = function (tokens, idx, options, env, self) {
