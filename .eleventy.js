@@ -278,7 +278,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("previewExternal", function (src) {
     const preview = loadPreviewPayload(src);
     if (!preview) {
-      return `<div class="card card--missing">Preview unavailable for ${escapeHtml(
+      return `<div class="link-preview link-preview-missing">Preview unavailable for ${escapeHtml(
         src || ""
       )}</div>`;
     }
@@ -297,37 +297,41 @@ module.exports = function (eleventyConfig) {
       attributionPieces.push(`<cite>${escapeHtml(publisher)}</cite>`);
     }
 
-    return `
-<div class="card">
-  <div class="card-body">
-    <div class="media">
-      ${
-        logoUrl
-          ? `<img src="${escapeHtml(
-              logoUrl
-            )}" alt="" class="yx-favicon" loading="lazy">`
-          : ""
-      }
-      <div class="media-body">
-        <h6>
-          <a href="${escapeHtml(
-            url
-          )}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(title)} <span aria-hidden="true">↗</span>
-          </a>
-        </h6>
-        ${
+    const faviconHtml = logoUrl
+      ? `<div class="link-preview-favicon"><img src="${escapeHtml(
+          logoUrl
+        )}" alt="" loading="lazy"></div>`
+      : "";
+
+    const descriptionHtml = description
+      ? `<div class="link-preview-description">${escapeHtml(
           description
-            ? `<p>${escapeHtml(description)}</p>`
-            : "<p>External link</p>"
-        }
+        )}</div>`
+      : "";
+
+    const metaHtml =
+      attributionPieces.length > 0
+        ? `<div class="link-preview-meta">${attributionPieces.join(
+            " · "
+          )}</div>`
+        : "";
+
+    return `
+<a href="${escapeHtml(
+      url
+    )}" target="_blank" rel="noopener noreferrer" class="link-preview">
+  <div class="link-preview-content">
+    ${faviconHtml}<div class="link-preview-body">
+      <div class="link-preview-title">
+        ${escapeHtml(title)}
+        <svg class="link-preview-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
+      ${descriptionHtml}${metaHtml}
     </div>
   </div>
-  <div class="card-footer">
-    <div class="yx-attribution">${attributionPieces.join(", ")}</div>
-  </div>
-</div>`.trim();
+</a>`.trim();
   });
 
   eleventyConfig.addNunjucksShortcode("postSeries", function () {
