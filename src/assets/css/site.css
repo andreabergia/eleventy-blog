@@ -253,7 +253,8 @@ main:has(.post-header-section) {
     gap: var(--space-lg);
 }
 
-.home-profile-picture {
+.home-header picture,
+.home-header picture img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -272,7 +273,8 @@ main:has(.post-header-section) {
         text-align: center;
     }
 
-    .home-profile-picture {
+    .home-header picture,
+    .home-header picture img {
         width: 300px;
         height: 300px;
     }
@@ -369,7 +371,8 @@ main:has(.post-header-section) {
         gap: var(--space-sm);
     }
 
-    .site-avatar {
+    .site-branding picture,
+    .site-branding picture img {
         width: var(--avatar-size);
         height: var(--avatar-size);
         border-radius: 50%;

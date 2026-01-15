@@ -7,9 +7,7 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
 <div class="post-header-section">
   <div class="post-header-content">
     <div class="home-header">
-      {% if site.author.email %}
-      <img src="{{ site.author.email | gravatar(600) }}" alt="{{ site.author.name }}" class="home-profile-picture">
-      {% endif %}
+      <eleventy-image src="{{ '/images/me2022-small-square.jpg' | base64 }}" alt="{{ site.author.name | base64 }}"></eleventy-image>
       <div class="home-header-text">
         <h1>Hello!</h1>
         <div class="post-metadata">

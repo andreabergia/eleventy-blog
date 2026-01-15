@@ -18,9 +18,7 @@
     <div class="page">
       <header class="site-header">
         <div class="site-branding">
-          {% if site.author.email %}
-          <img src="{{ site.author.email | gravatar(80) }}" alt="{{ site.author.name }}" class="site-avatar">
-          {% endif %}
+          <eleventy-image src="{{ '/images/me2022-small-square.jpg' | base64 }}" alt="{{ site.author.name | base64 }}"></eleventy-image>
           <a class="site-title" href="/">{{ site.title }}</a>
         </div>
         {% if site.menu %}

@@ -168,10 +168,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("slugify", slugify);
 
-  eleventyConfig.addFilter("gravatar", (email, size = 80) => {
-    if (!email) return "";
-    const hash = crypto.createHash("md5").update(email.toLowerCase().trim()).digest("hex");
-    return `https://www.gravatar.com/avatar/${hash}?s=${size}`;
+  eleventyConfig.addFilter("base64", (str) => {
+    return Buffer.from(str).toString("base64");
   });
 
   eleventyConfig.addFilter("wordCount", countWords);
