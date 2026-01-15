@@ -247,6 +247,37 @@ main:has(.post-header-section) {
     line-height: 1.2;
 }
 
+.home-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.home-profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.home-header-text {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .home-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-profile-picture {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 .post-metadata {
     display: flex;
     flex-direction: column;
