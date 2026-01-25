@@ -86,8 +86,17 @@ a {
     }
 }
 
-img {
+/* Media elements: block display prevents extra space, max-width prevents overflow */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
     max-width: 100%;
+}
+
+img {
     height: auto;
     border-radius: var(--radius-sm);
 }
@@ -117,6 +126,8 @@ h4 {
     letter-spacing: var(--font-heading-letter-spacing);
     text-transform: uppercase;
     font-weight: 700;
+    overflow-wrap: break-word;
+    text-wrap: balance;
 }
 
 h1 {
@@ -143,6 +154,11 @@ ol {
     font-weight: 400;
     -webkit-hyphens: auto;
     hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
 }
 
 ul {
