@@ -10,7 +10,7 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
       <eleventy-image src="{{ '/images/me2025-rustlab.jpg' | base64 }}" alt="{{ site.author.name | base64 }}"></eleventy-image>
       <div class="home-header-text">
         <h1>Hi, I'm Andrea</h1>
-        <p class="home-intro">Welcome to my website! 👋<br>My name is Andrea Bergia, I am a software engineer with over 15 years of experience, and this is my little corner of the Internet. 🇮🇹🇪🇺</p>
+        <p class="home-intro">Welcome to my website! 👋<br>My name is Andrea Bergia, I am a software engineer with over 15 years of experience, and this is my little corner of the Internet.&nbsp;🇮🇹&nbsp;🇪🇺</p>
         <p>You can find here my blog, where I write about programming, compilers, Rust, Java, or about cool stuff I find on the web.</p>
       </div>
     </div>
@@ -20,26 +20,6 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
 <div class="post-content-section">
   <div class="post-content-wrapper">
     <div class="home-columns">
-      {% if collections.featuredPosts and collections.featuredPosts.length %}
-      <section>
-        <h2 style="margin-top: 0;"><svg class="section-icon section-icon-featured" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Featured Posts</h2>
-        <ul class="post-list post-list--stacked post-list--featured">
-          {% for post in collections.featuredPosts %}
-          <li>
-            <a href="{{ post.url }}">
-              <span class="post-title">{{ post.data.title }}</span>
-              {% if post.data.excerpt %}
-              <span class="post-excerpt">{{ post.data.excerpt }}</span>
-              {% else %}
-              <span class="post-excerpt">{{ post.templateContent | excerpt }}</span>
-              {% endif %}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </section>
-      {% endif %}
-
       {% set recentPosts = collections.recentPosts %}
       {% if recentPosts and recentPosts.length %}
       <section>
@@ -57,6 +37,24 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
       </section>
       {% else %}
       <p>No posts yet. Migration in progress.</p>
+      {% endif %}
+
+      {% if collections.featuredPosts and collections.featuredPosts.length %}
+      <section>
+        <h2 style="margin-top: 0;"><svg class="section-icon section-icon-featured" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Featured Posts</h2>
+        <div class="featured-grid">
+          {% for post in collections.featuredPosts %}
+          <a href="{{ post.url }}" class="featured-card">
+            <span class="featured-card-title">{{ post.data.title }}</span>
+            {% if post.data.excerpt %}
+            <span class="featured-card-excerpt">{{ post.data.excerpt }}</span>
+            {% else %}
+            <span class="featured-card-excerpt">{{ post.templateContent | excerpt }}</span>
+            {% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </section>
       {% endif %}
     </div>
 

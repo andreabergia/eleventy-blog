@@ -602,6 +602,45 @@ main:has(.post-header-section) {
     }
 }
 
+.featured-grid {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.featured-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    padding: var(--space-md) var(--space-lg);
+    text-decoration: none;
+
+    &:hover {
+        background: var(--surface-alt);
+        border-color: var(--accent);
+    }
+
+    &:hover .featured-card-title {
+        color: var(--accent);
+    }
+}
+
+.featured-card-title {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: var(--space-sm);
+}
+
+.featured-card-excerpt {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--muted);
+    line-height: 1.6;
+}
+
 .series-indicator {
     margin-top: var(--space-md);
     background: var(--surface-alt);
