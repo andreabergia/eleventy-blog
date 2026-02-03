@@ -44,6 +44,8 @@
 
     --font-size-xs: 0.8rem;
     --font-size-sm: 0.9rem;
+    --font-size-lm: 1.15rem;
+    --font-size-lg: 1.5rem;
 }
 
 *,
@@ -245,6 +247,18 @@ main:has(.post-header-section) {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.22em;
     line-height: 1.2;
+}
+
+.home-header-text {
+    font-size: var(--font-size-lm);
+
+    h1 {
+        font-size: clamp(3rem, 5vw, 4rem);
+    }
+
+    .home-intro {
+        font-size: var(--font-size-lg);
+    }
 }
 
 .home-header {
