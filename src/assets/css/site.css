@@ -259,6 +259,11 @@ main:has(.post-header-section) {
     .home-intro {
         font-size: var(--font-size-lg);
     }
+    .home-my-name {
+        font-weight: 700;
+        color: var(--text);
+        font-variant: small-caps;
+    }
 }
 
 .home-header {
