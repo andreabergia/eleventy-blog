@@ -467,14 +467,6 @@ main:has(.post-header-section) {
     margin-right: 0.3em;
 }
 
-.section-icon-featured {
-    color: var(--accent);
-}
-
-.section-icon-recent {
-    color: var(--accent2);
-}
-
 .post-list {
     display: grid;
     gap: var(--space-sm);
