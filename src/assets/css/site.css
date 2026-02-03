@@ -269,11 +269,16 @@ main:has(.post-header-section) {
 
 .home-header picture,
 .home-header picture img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
+}
+
+.home-header picture {
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
 }
 
 .home-header-text {
@@ -451,6 +456,14 @@ main:has(.post-header-section) {
     display: inline;
     vertical-align: middle;
     margin-right: 0.3em;
+}
+
+.section-icon-featured {
+    color: var(--accent);
+}
+
+.section-icon-recent {
+    color: var(--accent2);
 }
 
 .post-list {
