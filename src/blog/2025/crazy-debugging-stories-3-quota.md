@@ -4,6 +4,7 @@ tags:
   - debugging
 series: ["Crazy debugging stories"]
 title: Crazy debugging stories - Quota
+excerpt: "During a cloud migration, our distributed Monte Carlo simulator ran 20% faster for the first minute, then slowed down dramatically. The culprit was fun track down."
 ---
 
 

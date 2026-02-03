@@ -4,6 +4,7 @@ tags:
   - architecture
   - books
 title: Working effectively with legacy code
+excerpt: "Michael Feather's book defines legacy code to be code without tests, making it scary to change and hard to refactor. I wholeheartedly agree!"
 ---
 
 Recently, I have started working on a [large code base](https://www.servicenow.com/). It can reasonably considered "legacy" in many parts, given that some of the core files that I'm touching are around 20 years old. Also, there aren't anywhere near enough unit tests - even if there are a good numbers of integration tests.

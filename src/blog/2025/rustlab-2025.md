@@ -3,6 +3,7 @@ date: 2025-11-08T14:20:00+01:00
 tags:
 - talks
 title: "RustLab 2025"
+excerpt: I attended and spoke at RustLab 2025 in Florence, giving talks about my JIT compiler Emjay and arena allocators.
 ---
 
 This week I've had the pleasure of attending and speaking at [RustLab](https://rustlab.it/), a conference dedicated to Rust in Florence, Italy.

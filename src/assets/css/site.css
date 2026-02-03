@@ -329,6 +329,7 @@ main:has(.post-header-section) {
     letter-spacing: var(--font-heading-letter-spacing);
     color: var(--muted);
     text-decoration: none;
+    font-weight: 400;
 }
 
 .post-tag:hover {
@@ -433,10 +434,9 @@ main:has(.post-header-section) {
 .section-icon {
     width: 1em;
     height: 1em;
-    display: inline-block;
+    display: inline;
     vertical-align: middle;
     margin-right: 0.3em;
-    color: var(--accent);
 }
 
 .post-list {
@@ -518,27 +518,19 @@ main:has(.post-header-section) {
         font-size: var(--font-size-xs);
         margin-top: var(--space-sm);
     }
-}
 
-.post-list--featured {
-}
+    .post-excerpt {
+        display: block;
+        font-family: var(--font-body);
+        color: var(--muted);
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+        margin-top: var(--space-sm);
+    }
 
-.post-list--recent {
-}
-
-.post-tag-inline {
-    display: inline-block;
-    padding: 0.2em 0.5em;
-    margin-right: 0.4em;
-    margin-top: 0.3em;
-    background: var(--surface-alt);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
-    font-family: var(--font-heading);
-    letter-spacing: var(--font-heading-letter-spacing);
-    color: var(--muted);
-    text-transform: uppercase;
+    .post-tags {
+        margin-top: var(--space-sm);
+    }
 }
 
 .tag-grid {

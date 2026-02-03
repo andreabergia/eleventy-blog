@@ -4,6 +4,7 @@ tags:
   - languages
 title: Error handling patterns
 featured: 3
+excerpt: "A mini review of various approaches to error handling: from error codes in C to exceptions in Java, from callbacks in JavaScript to Result types in Rust."
 ---
 
 Error handling is a fundamental aspect of programming. Unless you are writing "hello world", you will need to handle errors in your code. In this post, I will discuss a bit the most common approaches used by various programming languages.

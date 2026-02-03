@@ -4,6 +4,7 @@ tags:
   - devops
 title: Migrating and evolving services in production
 featured: 4
+excerpt: "At lastminute.com, we replaced a production system that processes thousands of flight changes daily, without any downtime or data loss, using the Strangler Fig pattern and shadow calls."
 ---
 
 In this post, I want to tell you about a recent project that I have been working on at my current employer, [lastminute.com](https://www.lastminute.com/). We wanted to introduce a new system to replace an existing one, and we needed to do that without any downtime or losing any data. Let us discuss what we did and how!

@@ -4,6 +4,7 @@ tags:
   - rust
   - compiler
 title: Emjay - implementing function calls
+excerpt: "A deep dive into implementing function calls in my JIT compiler using a trampoline pattern to handle forward references."
 ---
 
 In this post, I am following up on the explanation of my simple JIT ~~compiler~~ glorified calculator [Emjay]({% ref "emjay.md" %}) and I will show you how I implemented function calls.

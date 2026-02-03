@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% set pageTitle = title or site.title %}
-    {% set pageDescription = description or site.description %}
+    {% set pageDescription = description or excerpt or site.description %}
     <title>{{ pageTitle }}</title>
     {% if pageDescription %}
     <meta name="description" content="{{ pageDescription }}">

@@ -4,6 +4,7 @@ tags:
   - java
   - tools
 title: Debugging tricks for IntelliJ
+excerpt: Advanced IntelliJ debugger features that go beyond basic breakpoints, including conditional breakpoints, setting variable values on the fly, exception breakpoints, field watchpoints, and frame manipulation for quasi-time-travel debugging.
 ---
 
 I have been using [IntelliJ Idea](https://www.jetbrains.com/idea/) at work for a decade or so by now, and it's been a reliable companion. [JetBrains IDEs](https://www.jetbrains.com/ides/) have a bit of a reputation for being slow, but their feature set is incredible: powerful refactoring tools, a great VCS UI (though I like [magit](https://magit.vc/) even more!), a huge number of supported frameworks, integration with just about any testing library for any language, code coverage tools, powerful debuggers, etc.

@@ -3,6 +3,7 @@ date: 2025-12-04T20:20:00+01:00
 tags:
   - blog
 title: Turning 40
+excerpt: Forty life and programming lessons learned over forty years.
 ---
 
 Today I am turning 40 years old. Which, while not exactly _great_, is better than the alternative, so kudos to me for still being alive! 🎉

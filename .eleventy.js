@@ -185,6 +185,28 @@ module.exports = function (eleventyConfig) {
     return content.replace(/<eleventy-image[^>]*><\/eleventy-image>/g, "");
   });
 
+  eleventyConfig.addFilter("excerpt", (content) => {
+    if (!content) return "";
+
+    // Strip all HTML tags first
+    const text = content.replace(/<[^>]+>/g, "").trim();
+
+    // Find first 2 sentences
+    let count = 0;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (char === '.' || char === '!' || char === '?') {
+        count++;
+        if (count === 2) {
+          return text.substring(0, i + 1).trim();
+        }
+      }
+    }
+
+    // Found fewer than 2 sentences, return all
+    return text;
+  });
+
   eleventyConfig.addCollection("posts", (collectionApi) => {
     const posts = collectPosts(collectionApi);
     const lookup = new Map();

@@ -3,6 +3,7 @@ date: 2025-05-14T23:00:00+02:00
 tags:
   - c++
 title: Writing C++ in 2025
+excerpt: A not so serious rant about my attempts to write modern C++, with all the latest tooling and best practices, and about how much I missed Rust.
 ---
 
 Spoiler: this is a rant. 😂

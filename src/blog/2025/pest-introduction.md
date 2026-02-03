@@ -4,6 +4,7 @@ tags:
   - rust
   - parsing
 title: "Pest gotchas"
+excerpt: "Two important but non-obvious aspects of using the Pest parser generator in Rust: how rule precedence affects matching order, and how to properly navigate the parse tree using into_inner and next methods."
 ---
 
 I have been using the [Pest](https://pest.rs/) parser generator library for Rust recently in a couple of projects, and I want to talk a bit about a couple of things that weren't too obvious for me.

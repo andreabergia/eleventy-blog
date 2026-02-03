@@ -28,13 +28,11 @@ description: Andrea Bergia's Website – developer, gamer, cat lover, tea addict
           <li>
             <a href="{{ post.url }}">
               <span class="post-title">{{ post.data.title }}</span>
-              <span class="post-meta">
-                {% if post.data.tags %}
-                  {% for tag in post.data.tags %}
-                    <span class="post-tag-inline">{{ tag }}</span>
-                  {% endfor %}
-                {% endif %}
-              </span>
+              {% if post.data.excerpt %}
+              <span class="post-excerpt">{{ post.data.excerpt }}</span>
+              {% else %}
+              <span class="post-excerpt">{{ post.templateContent | excerpt }}</span>
+              {% endif %}
             </a>
           </li>
           {% endfor %}

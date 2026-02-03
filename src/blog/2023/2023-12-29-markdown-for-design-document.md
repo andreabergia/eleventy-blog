@@ -4,6 +4,7 @@ tags:
   - architecture
 title: Markdown and Git for design documents
 featured: 5
+excerpt: Design documents are very important in may opinion, yet many teams skip them or use cumbersome tools like Word or Google Docs. Using markdown and Git PRs for writing and commenting on design documents makes it much simpler for an engineer, and in my experience meant many more people actually write down things!
 ---
 
 Something that I find very important to do before undertaking big cross-team developments is to write down a design document. Unfortunately, I have seldom seen teams do that, yet they are **very** useful in my experience!

@@ -4,6 +4,7 @@ tags:
   - debugging
 series: ["Crazy debugging stories"]
 title: Crazy debugging stories - Macros
+excerpt: "A story about a very strange Windows crash investigation."
 ---
 
 

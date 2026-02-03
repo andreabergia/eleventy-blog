@@ -5,6 +5,7 @@ tags:
   - rust
   - compiler
 title: Playing with Nom and parser combinators
+excerpt: Parser combinators are a fun, if a bit mind-twisting, techinique that lets you build complex parsers by composing simple functions that recognize basic patterns. In this post, I have built a tiny JSON parser using Rust's nom library.
 ---
 
 I usually write parsers by starting from a grammar and either coding a lexer/parser by hand or relying on tools such as the fantastic [Antlr](https://www.antlr.org/). However, a friend recently introduced me to [parser combinators](https://en.wikipedia.org/wiki/Parser_combinator), which I found to be very interesting and useful.

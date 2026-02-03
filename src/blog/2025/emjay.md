@@ -5,6 +5,7 @@ tags:
   - compiler
 title: Emjay - a simple JIT that does math
 featured: 2
+excerpt: "Emjay is a tiny JIT compiler that turns math expressions into executable machine code. It's a complete end-to-end implementation, from parsing to SSA-based IR optimization to native aarch64 code generation, built from scratch in Rust."
 ---
 
 Today I wanna show off my most recent little project, called `emjay`. It's a _very_ simple "language", with an evaluator that generates JIT code and executes it. It does not have a "normal" interpreter, only the JIT compiler. The language is _extremely_ limited, but that was intentional, since I wanted something simple that I could write end-to-end. All the code is written in Rust and it is hosted on GitHub at [https://github.com/andreabergia/emjay](https://github.com/andreabergia/emjay). It's roughly 4k lines of code including tests, so it is small enough to be presented in this post.

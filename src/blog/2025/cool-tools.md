@@ -3,6 +3,7 @@ date: 2025-10-12T17:30:00+02:00
 tags:
   - tools
 title: Useful tools and apps
+excerpt: A curated list of modern command-line tools and Mac applications that I use daily.
 ---
 
 Today I wanna share with you a list of very useful tools and apps that I use regularly. I'm not going to include very popular things such as [neovim](https://neovim.io/), [VS Code](https://code.visualstudio.com/), [Claude Code](https://www.claude.com/product/claude-code), or [Obsidian](https://obsidian.md/), but I'll try to link you to some slightly less known things, hoping you get to discover some useful thing you didn't know!
