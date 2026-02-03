@@ -263,6 +263,10 @@ main:has(.post-header-section) {
         font-weight: 700;
         color: var(--text);
         font-variant: small-caps;
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.22em;
     }
 }
 
@@ -520,6 +524,8 @@ main:has(.post-header-section) {
 
         &:hover {
             background: var(--surface-alt);
+            box-shadow: inset 0 0 0 1px var(--accent);
+            border-radius: var(--radius-sm);
         }
     }
 
@@ -566,6 +572,14 @@ main:has(.post-header-section) {
     }
 }
 
+/* Common interactive hover style for cards and list items */
+.interactive-card {
+    &:hover {
+        background: var(--surface-alt);
+        border-color: var(--accent);
+    }
+}
+
 .tag-grid {
     display: grid;
     gap: var(--space-sm);
@@ -577,11 +591,6 @@ main:has(.post-header-section) {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow);
-
-    &:hover {
-        background: var(--surface-alt);
-        border-color: var(--accent);
-    }
 
     a {
         display: block;
@@ -621,11 +630,6 @@ main:has(.post-header-section) {
     box-shadow: var(--shadow);
     padding: var(--space-md) var(--space-lg);
     text-decoration: none;
-
-    &:hover {
-        background: var(--surface-alt);
-        border-color: var(--accent);
-    }
 
     &:hover .featured-card-title {
         color: var(--accent);
