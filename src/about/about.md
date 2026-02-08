@@ -22,10 +22,14 @@ Like most Italians, I love a good cup of espresso, but not the watery thing that
 
 I live in north-western Italy, near the gorgeous [Torino](https://www.turismotorino.org/). I enjoy cooking, reading, music, photography, and video games.
 
-[Curriculum vitae (PDF, EN)](/files/cv-en.pdf) - last updated: Nov 2025.
+This website now runs on [Eleventy](https://www.11ty.dev/) and is hosted on [Netlify](https://www.netlify.com/). It is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the source code is on [GitHub](https://github.com/andreabergia/eleventy-blog).
 
----
-
-This website now runs on [Eleventy](https://www.11ty.dev/) and is hosted on [Netlify](https://www.netlify.com/).
+<div class="cv-card">
+  <div class="cv-card-text">
+    <div class="cv-card-label">Curriculum vitae</div>
+    <p class="cv-card-meta">PDF · English · Updated Nov 2025</p>
+  </div>
+  <a class="cta cta-secondary" href="/files/cv-en.pdf">Download</a>
+</div>
 
 ![A panorama of Turin by night, taken by me](/images/turin.jpg)
