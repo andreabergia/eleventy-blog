@@ -4,7 +4,9 @@ tags:
 - java
 - gradle
 title: Writing a Gradle Plugin / 1
-aliases: [/writing-a-gradle-plugin-1]
+aliases:
+  - /writing-a-gradle-plugin-1
+  - /blog/2016/06/writing-a-gradle-plugin-/-1
 ---
 
 In this short series, we are going to dig a bit in how one writes a gradle plugin. Our plugins won't do anything useful except some `println`; however I hope to manage to explain some concept and to save you some time in case you have to write one. The source code for this tutorial is available on github at [https://github.com/andreabergia/sample-gradle-plugin](https://github.com/andreabergia/sample-gradle-plugin).

@@ -3,7 +3,9 @@ date: 2014-11-12T22:43:00Z
 tags:
 - sql
 title: Introduction to SQL Window Functions / 1
-aliases: [/introduction-to-sql-window-functions]
+aliases:
+  - /introduction-to-sql-window-functions
+  - /blog/2014/11/introduction-to-sql-window-functions-/-1
 ---
 
 Window functions are an extremely powerful powerful part of the SQL 2003 standard, supported by most modern releases of databases such as Oracle 8+, Postgres 9.1+, SQL Server 2005+ and others. Sadly neither SQLLite or MySql seem to support them yet, but if you are working with a database where they are available, _do_ use them: they can make your life a lot easier. Generally, with window functions, you can write simpler and faster code than you would without.

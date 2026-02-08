@@ -3,7 +3,9 @@ date: 2016-03-28T09:32:14Z
 tags:
 - java
 title: Spring @Autowired and missing beans
-aliases: [/spring-autowired-and-missing-beans]
+aliases:
+  - /spring-autowired-and-missing-beans
+  - /blog/2016/03/spring-@autowired-and-missing-beans
 ---
 
 Very often, when using [Spring](https://spring.io/)'s dependency injection, you will simply use the [`@Autowired`](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html) annotation on your fields, constructor or setter methods, since you _know_ there will be one and only one instance of the required bean at runtime.

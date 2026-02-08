@@ -4,7 +4,9 @@ tags:
 - java
 - gradle
 title: Writing a Gradle Plugin / 2
-aliases: [/writing-a-gradle-plugin-2]
+aliases:
+  - /writing-a-gradle-plugin-2
+  - /blog/2016/06/writing-a-gradle-plugin-/-2
 ---
 
 In the [previous part]({% ref "2016-06-05-writing-a-gradle-plugin-1.markdown" %}) of this series we have started writing our own gradle plugin. Let's go on. As last time, the code can be seen at [https://github.com/andreabergia/sample-gradle-plugin/tree/b7aeccc31e6285d2fbe4dab8024d1d1cbbddf698](https://github.com/andreabergia/sample-gradle-plugin/tree/b7aeccc31e6285d2fbe4dab8024d1d1cbbddf698).

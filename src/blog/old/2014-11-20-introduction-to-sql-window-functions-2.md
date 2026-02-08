@@ -3,7 +3,9 @@ date: 2014-11-20T21:57:44Z
 tags:
 - sql
 title: Introduction to SQL Window Functions / 2
-aliases: [/introduction-to-sql-window-functions-2]
+aliases:
+  - /introduction-to-sql-window-functions-2
+  - /blog/2014/11/introduction-to-sql-window-functions-/-2
 ---
 
 As we have seen [in the previous part]({% ref "2014-11-12-introduction-to-sql-window-functions.markdown" %}), window functions are an usefull tool to solve a lot of SQL problems with great performances. Let's see some more tricks.

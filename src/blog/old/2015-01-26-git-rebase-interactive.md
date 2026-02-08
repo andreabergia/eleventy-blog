@@ -3,7 +3,9 @@ date: 2015-01-26T19:44:55Z
 tags:
 - tools
 title: git rebase --interactive
-aliases: [/git-rebase-interactive]
+aliases:
+  - /git-rebase-interactive
+  - /blog/2015/01/git-rebase--interactive
 ---
 
 Git has an excellent tool designed to help you reorder the commit history: _interactive rebase_. This can be excellent if you want to keep the history clean, so that it helps other programmers understand the logic behind the changes rather than the actual sequence of commits. Let's walk through an example.
