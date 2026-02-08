@@ -10,6 +10,8 @@ eleventyComputed:
   title: "{% if pagination.pageNumber > 0 %}Posts · Page {{ pagination.pageNumber + 1 }}{% else %}Posts{% endif %}"
 ---
 
+{% from "components/post-list.njk" import postList %}
+
 {% set totalPosts = collections.posts | length %}
 {% set startIndex = pagination.pageNumber * pagination.size + 1 %}
 {% set endIndex = startIndex + (pagedPosts.length or 0) - 1 %}
@@ -36,20 +38,10 @@ eleventyComputed:
       </p>
     </div>
 
-    {% if pagedPosts and pagedPosts.length %}
-    <ul class="post-list post-list--stacked">
-      {% for post in pagedPosts %}
-      <li>
-        <a href="{{ post.url }}">
-          <span class="post-meta">{{ post.date | readableDate }}</span>
-          <span class="post-title">{{ post.data.title or "Untitled post" }}</span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p>No posts available.</p>
-    {% endif %}
+    {{ postList(
+      pagedPosts,
+      listClass = "post-list--stacked"
+    ) }}
 
     {% if pagination.href.previous or pagination.href.next %}
     <nav class="pager" aria-label="Pagination">

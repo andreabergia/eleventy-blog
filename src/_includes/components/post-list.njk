@@ -1,0 +1,21 @@
+{% macro postList(posts, listClass = "", dateAfterTitle = false) %}
+
+  {% if posts and posts.length %}
+  <ul class="post-list{{ ' ' ~ listClass if listClass else '' }}">
+    {% for post in posts %}
+    {% set title = post.data.title or "Untitled post" %}
+    <li>
+      <a href="{{ post.url }}">
+        {% if dateAfterTitle %}
+        <span class="post-title">{{ title }}</span>
+        <span class="post-meta">{{ post.date | readableDate }}</span>
+        {% else %}
+        <span class="post-meta">{{ post.date | readableDate }}</span>
+        <span class="post-title">{{ title }}</span>
+        {% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}

@@ -10,6 +10,7 @@ eleventyComputed:
 ---
 
 {% from "components/breadcrumb.njk" import breadcrumb %}
+{% from "components/post-list.njk" import postList %}
 
 <div class="post-header-section">
   <div class="post-header-content">
@@ -31,19 +32,9 @@ eleventyComputed:
 
 <div class="post-content-section">
   <div class="post-content-wrapper">
-    {% if tag.posts and tag.posts.length %}
-    <ul class="post-list post-list--stacked">
-      {% for post in tag.posts %}
-      <li>
-        <a href="{{ post.url }}">
-          <span class="post-meta">{{ post.date | readableDate }}</span>
-          <span class="post-title">{{ post.data.title }}</span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p>There are no posts for this tag yet.</p>
-    {% endif %}
+    {{ postList(
+      tag.posts,
+      listClass = "post-list--stacked"
+    ) }}
   </div>
 </div>
