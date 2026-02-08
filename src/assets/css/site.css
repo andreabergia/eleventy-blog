@@ -476,6 +476,13 @@ main:has(.post-header-section) {
     margin-right: 0.3em;
 }
 
+.section-title {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
 .post-list {
     display: grid;
     gap: var(--space-sm);
@@ -642,6 +649,16 @@ main:has(.post-header-section) {
     letter-spacing: 0.02em;
     color: var(--text);
     margin-bottom: var(--space-sm);
+}
+
+.featured-card-meta {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--muted);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
 }
 
 .featured-card-excerpt {
