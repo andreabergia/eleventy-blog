@@ -14,9 +14,7 @@
   "disqusShortname": "andreabergia",
   "menu": [
     { "name": "About", "url": "/about/" },
-    { "name": "Blog", "url": "/post/" },
-    { "name": "Tags", "url": "/tags/" },
-    { "name": "Series", "url": "/series/" }
+    { "name": "Blog", "url": "/post/" }
   ],
   "social": [
     { "name": "RSS", "icon": "fa fa-rss fa-2x", "url": "/index.xml" },
