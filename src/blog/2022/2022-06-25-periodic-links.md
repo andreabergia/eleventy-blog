@@ -12,7 +12,7 @@ Hello, and welcome to a new edition of _Links lists!_
 
 ### Kubernetes and the OOM killer
 
-A couple of links related to my latest [post](/2022/06/java-gc-and-kubernetes), on the Kubernetes OOM killer.
+A couple of links related to my latest [post]({% ref "2022-06-19-jvm-kubernetes-gc.md" %}), on the Kubernetes OOM killer.
 
 {% previewExternal "sysdig.com.blog.troubleshoot-kubernetes-oom" %}
 
@@ -32,7 +32,7 @@ If you ever wondered why there are both a `/bin` and `/usr/bin`, here's an expla
 
 ### Postgres and vacuum wraparound
 
-In my [Postgres and MVCC post](/2022/05/postgresql-mvcc), I talked about how transaction ids work in Postgres, and the necessity of the vacuum process. Here are some more details about the process.
+In my [Postgres and MVCC post]({% ref "2022-05-28-postgres-mvcc.md" %}), I talked about how transaction ids work in Postgres, and the necessity of the vacuum process. Here are some more details about the process.
 
 {% previewExternal "www.percona.com.blog.overcoming-vacuum-wraparound" %}
 

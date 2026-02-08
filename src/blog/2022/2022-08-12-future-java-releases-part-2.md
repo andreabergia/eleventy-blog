@@ -7,7 +7,7 @@ series: ["Future Java Releases"]
 ---
 
 
-In this second post in the [future of Java series](/series/future-java-releases), we will focus on a new feature of the JVM designed to improve performance.
+In this second post in the future of Java series, we will focus on a new feature of the JVM designed to improve performance.
 
 # Project Loom - Virtual Threads
 

@@ -6,7 +6,7 @@ title: PostgreSQL and MVCC
 aliases: [/2022/05/postgresql-mvcc]
 ---
 
-As promised in a [previous article](/postgresql-is-awesome), let's discuss what MVCC is and why it is fundamenta to the workings of PostgreSQL. Even if you are a dev and not a DBA, I believe it is very helpful to have at least a rough understanding of how it works.
+As promised in a [previous article]({% ref "2022-04-24-postgres.md" %}), let's discuss what MVCC is and why it is fundamenta to the workings of PostgreSQL. Even if you are a dev and not a DBA, I believe it is very helpful to have at least a rough understanding of how it works.
 
 Let us start with an example. We have a very simple schema such as:
 

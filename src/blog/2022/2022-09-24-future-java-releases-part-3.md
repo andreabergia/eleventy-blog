@@ -7,7 +7,7 @@ series: ["Future Java Releases"]
 ---
 
 
-In this third and last post in the [future of Java series](/series/future-java-releases), we will focus on another great new feature of the JVM, designed to improve performance. But, before talking about the language and JVM evolution, I am going to give you some background on what this enhancement plans to improve.
+In this third and last post in the future of Java series, we will focus on another great new feature of the JVM, designed to improve performance. But, before talking about the language and JVM evolution, I am going to give you some background on what this enhancement plans to improve.
 
 # Value classes and primitive wrappers
 

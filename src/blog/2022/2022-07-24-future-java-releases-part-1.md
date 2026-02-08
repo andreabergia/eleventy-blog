@@ -12,7 +12,7 @@ Java's evolution has sped up in the past few years, ever since the release caden
 
 There are a lot of articles around detailing the new features in [Java 11](https://www.baeldung.com/java-11-new-features) or [Java 17](https://www.baeldung.com/java-17-new-features), so I am not going to rehearse them. However, I wanna write a few articles about some extremely interesting features that will be included in future releases. Some of these will have a _huge_ impact on the performances of the JVM!
 
-So, let us start with the first article of this [mini-series](/series/future-java-releases).
+So, let us start with the first article of this mini-series.
 
 # Language enhancement
 
