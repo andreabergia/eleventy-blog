@@ -284,15 +284,25 @@ module.exports = function (eleventyConfig) {
     const seen = new Set();
     const entries = [];
 
-    collectionApi.getAll().forEach((page) => {
+    // Get all pages including posts
+    const allPages = collectionApi.getAll();
+
+    allPages.forEach((page) => {
       if (!page.url) return;
       const aliases = getAliases(page.data);
       if (!aliases.length) return;
 
       aliases.forEach((alias) => {
-        const permalink = aliasToPermalink(alias);
-        if (!permalink || seen.has(permalink)) return;
-        seen.add(permalink);
+        if (!alias || seen.has(alias)) return;
+        seen.add(alias);
+        // Normalize alias to URL format
+        let permalink = alias.trim();
+        if (!permalink.startsWith("/")) {
+          permalink = `/${permalink}`;
+        }
+        if (!permalink.endsWith("/")) {
+          permalink = `${permalink}/`;
+        }
         entries.push({
           permalink,
           target: page.url,

@@ -19,8 +19,6 @@ module.exports = {
       const date = DateTime.fromJSDate(data.date, { zone: "utc" });
       const slug = derivePostSlug(data);
       return `/blog/${date.toFormat("yyyy/MM")}/${slug}/`;
-    },
-    aliasesNormalized: (data) =>
-      normalizeList(data.aliasesNormalized ?? data.aliases ?? data.alias)
+    }
   }
 };
