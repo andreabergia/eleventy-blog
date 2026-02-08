@@ -276,6 +276,48 @@ main:has(.post-header-section) {
     gap: var(--space-lg);
 }
 
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.home-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65em 1.2em;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    letter-spacing: var(--font-heading-letter-spacing);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background: var(--surface);
+    color: var(--text);
+}
+
+.home-action-primary {
+    background: var(--accent);
+    color: var(--accent-contrast);
+    border-color: var(--accent);
+}
+
+.home-action-secondary {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.home-action-primary:hover,
+.home-action-secondary:hover {
+    background: var(--surface-alt);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 .home-header picture,
 .home-header picture img {
     width: 300px;
