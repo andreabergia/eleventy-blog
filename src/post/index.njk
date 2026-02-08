@@ -30,6 +30,12 @@ eleventyComputed:
 
 <div class="post-content-section">
   <div class="post-content-wrapper">
+    <div class="post-browse-card">
+      <p>
+        You can also read posts grouped by <a href="/tags/">tags</a> or by <a href="/series/">series</a>.
+      </p>
+    </div>
+
     {% if pagedPosts and pagedPosts.length %}
     <ul class="post-list post-list--stacked">
       {% for post in pagedPosts %}
