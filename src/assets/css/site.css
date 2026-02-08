@@ -263,10 +263,6 @@ main:has(.post-header-section) {
         font-weight: 700;
         color: var(--text);
         font-variant: small-caps;
-        text-decoration: underline;
-        text-decoration-color: var(--accent);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 0.22em;
     }
 }
 
@@ -280,7 +276,7 @@ main:has(.post-header-section) {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    margin-top: var(--space-md);
+    margin: var(--space-lg) 0 var(--space-sm);
 }
 
 .home-action {
