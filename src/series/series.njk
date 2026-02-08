@@ -6,12 +6,12 @@ pagination:
   alias: series
 permalink: /series/{{ series.slug }}/index.html
 eleventyComputed:
-  title: "Series: {{ series.name }}"
+  title: "Blog / Series: {{ series.name }}"
 ---
 
 <div class="post-header-section">
   <div class="post-header-content">
-    <h1>{{ series.name }}</h1>
+    <h1>Blog / Series: {{ series.name }}</h1>
     {% if series.posts and series.posts.length %}
     <div class="post-metadata">
       <div class="post-meta-row">

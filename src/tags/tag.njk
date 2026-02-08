@@ -6,12 +6,12 @@ pagination:
   alias: tag
 permalink: /tags/{{ tag.slug }}/index.html
 eleventyComputed:
-  title: "Tag: {{ tag.name }}"
+  title: "Blog / Tag: {{ tag.name }}"
 ---
 
 <div class="post-header-section">
   <div class="post-header-content">
-    <h1>#{{ tag.name }}</h1>
+    <h1>Blog / #{{ tag.name }}</h1>
     {% if tag.posts and tag.posts.length %}
     <div class="post-metadata">
       <div class="post-meta-row">
