@@ -204,7 +204,21 @@ module.exports = function (eleventyConfig) {
     }
 
     // Found fewer than 2 sentences, return all
-    return text;
+    return text.length > 200 ? text.substring(0, 200).trim() + "..." : text;
+  });
+
+  eleventyConfig.addFilter("isAbsoluteUrl", (url) => {
+    if (!url || typeof url !== 'string') return false;
+    return url.startsWith('http://') || url.startsWith('https://');
+  });
+
+  eleventyConfig.addFilter("absoluteUrl", (url) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    const path = url.startsWith('/') ? url.substring(1) : url;
+    return site.baseUrl + path;
   });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {
