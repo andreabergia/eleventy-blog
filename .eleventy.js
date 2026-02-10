@@ -4,6 +4,7 @@ const crypto = require("node:crypto");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@pborenstein/eleventy-md-syntax-highlight");
 const markdownItAnchor = require("markdown-it-anchor");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const site = require("./src/_data/site.json");
 const {
   aliasToPermalink,
@@ -96,6 +97,11 @@ const loadPreviewPayload = (src) => {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, { showLineNumbers: false });
+  eleventyConfig.addPlugin(sitemap, { 
+    sitemap: { 
+      hostname: "https://andreabergia.com" 
+    } 
+  });
   eleventyConfig.addWatchTarget("src/_data/previews");
 
   // Add markdown-it image override
