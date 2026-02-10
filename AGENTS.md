@@ -44,7 +44,30 @@ src/
 ├── series/             # Series listing pages
 ├── tags/               # Tag listing pages
 └── aliases/            # URL redirect pages
+
+lib/
+├── content-utils.js    # Build utilities (slugification, alias handling, series processing)
+└── image-shortcode.js  # Image processing logic
+
+public/
+├── favicon.ico         # Site favicon
+├── robots.txt          # Search engine instructions
+├── rss.xsl             # RSS feed stylesheet
+├── images/             # Static images served at /images/
+└── files/              # Static files served at /files/
 ```
+
+### Key Directories
+
+**`lib/`** - Build utilities used by Eleventy during the build process (not served to users):
+- `content-utils.js` - Helper functions for slugification, alias handling, series processing
+- `image-shortcode.js` - Image processing logic
+
+**`public/`** - Static files copied directly to the site root via `addPassthroughCopy`:
+- `favicon.ico`, `robots.txt`, `rss.xsl` - Served at root level
+- `images/`, `files/` - Static assets served at `/images/`, `/files/`
+
+The key distinction: `lib/` contains Node.js code that runs during build, while `public/` contains assets served to users.
 
 ### Content Organization
 
@@ -80,14 +103,21 @@ The build creates several collections for organizing content:
 3. **`series`** - Posts grouped by series
 4. **`seriesMap`** - Object lookup for series data
 5. **`featuredPosts`** - Posts with `featured` frontmatter value
-6. **`recentPosts`** - Last 10 posts
+6. **`recentPosts`** - Last 5 posts
 7. **`aliases`** - URL redirects from old to new URLs
 
-### Custom Filters (`.eleventy.js:89-100`)
+### Custom Filters (`.eleventy.js:164-228`)
 
 - **`readableDate`** - Formats dates using Luxon (format from `site.json`)
 - **`dateIso`** - Converts to ISO 8601 format
 - **`slugify`** - Normalizes strings to URL-safe slugs
+- **`base64`** - Encodes strings to base64
+- **`wordCount`** - Counts words in content
+- **`readingTime`** - Calculates estimated reading time (200 wpm)
+- **`stripImagePlaceholders`** - Removes image placeholder tags
+- **`excerpt`** - Generates excerpt from content (first 2 sentences or 200 chars)
+- **`isAbsoluteUrl`** - Checks if URL is absolute
+- **`absoluteUrl`** - Converts relative URLs to absolute using `site.baseUrl`
 
 ### Custom Shortcodes (`.eleventy.js:199-332`)
 
@@ -124,7 +154,8 @@ base.njk (root)
 
 Main stylesheet: `src/assets/css/site.css`
 - Dark theme with CSS variables
-- Typography: Bebas Neue (headings), Inter (body), JetBrains Mono (code)
+- Typography: Bebas Neue (headings), Helvetica Neue (body), JetBrains Mono (code)
+  - Fonts imported: Bebas Neue, JetBrains Mono (Inter falls back to system-ui)
 - Responsive design patterns
 
 ### URL Migration
