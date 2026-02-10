@@ -119,12 +119,23 @@ module.exports = function (eleventyConfig) {
     mdLib.renderer.rules.image = function (tokens, idx, options, env, self) {
       const token = tokens[idx];
       const src = token.attrGet("src");
-      const alt = token.content;
+      let alt = token.content;
+
+      let className = "";
+      const classMatch = alt.match(/^(.*?)\{\.([^}]+)\}$/);
+      if (classMatch) {
+        alt = classMatch[1];
+        className = classMatch[2];
+      }
 
       const srcEncoded = Buffer.from(src).toString("base64");
       const altEncoded = Buffer.from(alt).toString("base64");
+      const classEncoded = className ? Buffer.from(className).toString("base64") : "";
 
       // Return async placeholder - will be processed during build
+      if (classEncoded) {
+        return `<eleventy-image src="${srcEncoded}" alt="${altEncoded}" class="${classEncoded}"></eleventy-image>`;
+      }
       return `<eleventy-image src="${srcEncoded}" alt="${altEncoded}"></eleventy-image>`;
     };
   });
@@ -135,17 +146,18 @@ module.exports = function (eleventyConfig) {
       return content;
     }
 
-    const imageRegex = /<eleventy-image src="([^"]+)" alt="([^"]*)"><\/eleventy-image>/g;
+    const imageRegex = /<eleventy-image src="([^"]+)" alt="([^"]*)"(?: class="([^"]*)")?><\/eleventy-image>/g;
     const promises = [];
     const replacements = [];
 
     let match;
     while ((match = imageRegex.exec(content)) !== null) {
-      const [fullMatch, srcEncoded, altEncoded] = match;
+      const [fullMatch, srcEncoded, altEncoded, classEncoded] = match;
       const src = Buffer.from(srcEncoded, "base64").toString("utf8");
       const alt = Buffer.from(altEncoded, "base64").toString("utf8");
+      const className = classEncoded ? Buffer.from(classEncoded, "base64").toString("utf8") : "";
 
-      const promise = imageShortcode(src, alt).then(html => {
+      const promise = imageShortcode(src, alt, undefined, className).then(html => {
         replacements.push({ placeholder: fullMatch, html });
       });
       promises.push(promise);
