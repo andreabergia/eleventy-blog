@@ -167,6 +167,13 @@ article {
         margin: var(--space-md) auto;
     }
 
+    img.screenshot {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+        background: var(--surface);
+    }
+
     ul,
     ol {
         padding-left: 1.5em;

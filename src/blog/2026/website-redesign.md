@@ -21,8 +21,8 @@ So here it is, the new version of my website! I hope you like it as much as I do
 
 Here's a small gallery of the old website, for my nostalgia moments in a couple of years.
 
-![Homepage](/images/2026/old-blog/homepage.png)
-![Posts list](/images/2026/old-blog/posts.png)
-![A blog post](/images/2026/old-blog/blog-post.png)
-![Series list](/images/2026/old-blog/series.png)
-![About page](/images/2026/old-blog/about.png)
+<img src="/images/2026/old-blog/homepage.png" alt="Homepage" class="screenshot">
+<img src="/images/2026/old-blog/posts.png" alt="Posts list" class="screenshot">
+<img src="/images/2026/old-blog/blog-post.png" alt="A blog post" class="screenshot">
+<img src="/images/2026/old-blog/series.png" alt="Series list" class="screenshot">
+<img src="/images/2026/old-blog/about.png" alt="About page" class="screenshot">
