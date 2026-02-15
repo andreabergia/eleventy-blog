@@ -269,9 +269,7 @@ module.exports = function (eleventyConfig) {
     const map = new Map();
 
     collectPosts(collectionApi).forEach((post) => {
-      const tags = (post.data.tags || []).filter(
-        (tag) => tag && tag.toLowerCase() !== "blog"
-      );
+      const tags = (post.data.tags || []).filter((tag) => tag);
 
       tags.forEach((tag) => {
         if (!map.has(tag)) {

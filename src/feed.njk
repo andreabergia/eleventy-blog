@@ -29,7 +29,7 @@ eleventyExcludeFromCollections: true
     </author>
     <content type="html"><![CDATA[{{ post.content | stripImagePlaceholders }}]]></content>
     {%- for tag in post.data.tags %}
-    {%- if tag and tag | lower != "blog" %}
+    {%- if tag %}
     <category term="{{ tag | slugify }}" label="{{ tag }}"/>
     {%- endif %}
     {%- endfor %}

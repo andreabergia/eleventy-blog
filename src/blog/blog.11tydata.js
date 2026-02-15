@@ -4,13 +4,7 @@ const { derivePostSlug, normalizeList } = require("../../lib/content-utils");
 module.exports = {
   layout: "layouts/post.njk",
   eleventyComputed: {
-    tags: (data) => {
-      const normalized = normalizeList(data.tags);
-      const withoutBlog = normalized.filter(
-        (tag) => tag.toLowerCase() !== "blog"
-      );
-      return ["blog", ...withoutBlog];
-    },
+    tags: (data) => normalizeList(data.tags),
     permalink: (data) => {
       if (!data.date) {
         return `${data.page.filePathStem}/`;
