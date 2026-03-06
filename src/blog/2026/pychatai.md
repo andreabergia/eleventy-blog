@@ -4,10 +4,11 @@ tags:
   - ai
   - rust
 title: "PyChat.ai: A live Python REPL with an agentic LLM that edits and evaluates code"
+slug: pychat-ai
 excerpt: "I have built a Python REPL that embeds an LLM agent that can inspect and modify Python runtime state."
 image: /images/2026/pychat.ai/pychatai.png
 aliases:
-  - /blog/2026/02/pychat-ai
+  - /blog/2026/02/pychat-ai-a-live-python-repl-with-an-agentic-llm-that-edits-and-evaluates-code
 ---
 
 I have built something that I believe is pretty interesting: it's a Python REPL that embeds an LLM agentic loop, which has access to the Python environment and can query a value or run code. Here's a screenshot of a simple interaction:
