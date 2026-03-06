@@ -1,6 +1,6 @@
-This is the personal website of Andrea Bergia, a software engineer based in Italy. 
+I am Andrea Bergia, a software engineer based in Italy, and this is my personal website.
 
-It is implemented an Eleventy (11ty) static site generator blog, built with Nunjucks templates and Markdown content. It is a migration of an older Hugo version, contained at ../hugoblog.
+It is implemented an Eleventy (11ty) static site generator blog, built with Nunjucks templates and Markdown content.
 
 ## Development Commands
 
@@ -63,9 +63,7 @@ public/
 - `content-utils.js` - Helper functions for slugification, alias handling, series processing
 - `image-shortcode.js` - Image processing logic
 
-**`public/`** - Static files copied directly to the site root via `addPassthroughCopy`:
-- `favicon.ico`, `robots.txt`, `rss.xsl` - Served at root level
-- `images/`, `files/` - Static assets served at `/images/`, `/files/`
+**`public/`** - Static files copied directly to the site root via `addPassthroughCopy`
 
 The key distinction: `lib/` contains Node.js code that runs during build, while `public/` contains assets served to users.
 
@@ -94,6 +92,14 @@ draft: false
 ---
 ```
 
+### URL Patterns
+
+- **Blog posts**: `/blog/YYYY/MM/post-slug/`
+- **Tags**: `/tags/tag-slug/` (paginated)
+- **Series**: `/series/series-slug/` (paginated)
+- **Blog listing**: `/post/`
+- **Aliases**: Generate redirect pages at old URLs
+
 ### Collections (`.eleventy.js`)
 
 The build creates several collections for organizing content:
@@ -105,19 +111,6 @@ The build creates several collections for organizing content:
 5. **`featuredPosts`** - Posts with `featured` frontmatter value
 6. **`recentPosts`** - Last 5 posts
 7. **`aliases`** - URL redirects from old to new URLs
-
-### Custom Filters (`.eleventy.js:164-228`)
-
-- **`readableDate`** - Formats dates using Luxon (format from `site.json`)
-- **`dateIso`** - Converts to ISO 8601 format
-- **`slugify`** - Normalizes strings to URL-safe slugs
-- **`base64`** - Encodes strings to base64
-- **`wordCount`** - Counts words in content
-- **`readingTime`** - Calculates estimated reading time (200 wpm)
-- **`stripImagePlaceholders`** - Removes image placeholder tags
-- **`excerpt`** - Generates excerpt from content (first 2 sentences or 200 chars)
-- **`isAbsoluteUrl`** - Checks if URL is absolute
-- **`absoluteUrl`** - Converts relative URLs to absolute using `site.baseUrl`
 
 ### Custom Shortcodes (`.eleventy.js:199-332`)
 
@@ -132,14 +125,6 @@ The build creates several collections for organizing content:
    - Accepts multiple formats: filename, relative path, full path
    - Returns post URL
    - Warns on missing references
-
-### URL Patterns
-
-- **Blog posts**: `/blog/YYYY/MM/post-slug/`
-- **Tags**: `/tags/tag-slug/` (paginated)
-- **Series**: `/series/series-slug/` (paginated)
-- **Blog listing**: `/post/`
-- **Aliases**: Generate redirect pages at old URLs
 
 ### Template Inheritance
 
@@ -157,18 +142,6 @@ Main stylesheet: `src/assets/css/site.css`
 - Typography: Bebas Neue (headings), Helvetica Neue (body), JetBrains Mono (code)
   - Fonts imported: Bebas Neue, JetBrains Mono (Inter falls back to system-ui)
 - Responsive design patterns
-
-### URL Migration
-
-Use the `aliases` frontmatter field to redirect old URLs:
-
-```yaml
-aliases:
-  - /old-path/to/post
-  - /another-old-path
-```
-
-This generates redirect pages at the old URLs using meta refresh.
 
 ### Internal References
 
@@ -188,6 +161,5 @@ Accepts multiple path formats:
 - Do not use CSS transitions
 - In CSS, strive to reuse existing variable if they have the same semantics
 - CSS class name should _not_ have a double dash (no `link--active`)
-- **Always** validate the generated html by building the website and inspecting the generated file
+- Always validate the generated html by building the website and inspecting the generated file when modifying templates or JS logic
 - Always run a build and unit tests before saying "done"
-
