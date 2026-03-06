@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
+    "build": "rm -rf dist && eleventy",
     "test": "node --test 'test/**/*.test.js'"
   },
   "devDependencies": {
