@@ -6,7 +6,7 @@ title: "RustLab 2025"
 excerpt: I attended and spoke at RustLab 2025 in Florence, giving talks about my JIT compiler Emjay and arena allocators.
 ---
 
-This week I've had the pleasure of attending and speaking at [RustLab](https://rustlab.it/), a conference dedicated to Rust in Florence, Italy.
+This week I've had the pleasure of attending and speaking at [RustLab](https://rustlab.it/), a conference dedicated to Rust in Florence, Italy. [Here's](https://www.youtube.com/watch?v=DexazCpUnwA) the recording of the talk.
 
 It was only the second conference I’d ever attended, and the first I’d spoken at, so it was quite a novel experience for me. And I had a lot of fun! The conference was well organized, the venue was great, the pastries for the coffee breaks were _excellent_, I met a ton of smart people, and there were a lot of really good talks.
 
