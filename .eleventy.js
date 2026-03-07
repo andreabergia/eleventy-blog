@@ -37,6 +37,22 @@ const escapeHtml = (value = "") =>
     }
   });
 
+const toAbsoluteUrl = (url = "") => {
+  if (!url) return "";
+  if (
+    url.startsWith("http://") ||
+    url.startsWith("https://") ||
+    url.startsWith("mailto:") ||
+    url.startsWith("#") ||
+    url.startsWith("data:")
+  ) {
+    return url;
+  }
+
+  const normalizedPath = url.startsWith("/") ? url.slice(1) : url;
+  return `${site.baseUrl}${normalizedPath}`;
+};
+
 const countWords = (content) => {
   if (!content) return 0;
   const text = content.replace(/<[^>]*>/g, "");
@@ -201,7 +217,28 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("atomContent", (content) => {
     if (!content) return "";
     return content
-      .replace(/<eleventy-image[^>]*><\/eleventy-image>/g, "")
+      .replace(
+        /<eleventy-image src="([^"]+)" alt="([^"]*)"(?: class="([^"]*)")?><\/eleventy-image>/g,
+        (_, srcEncoded, altEncoded, classEncoded) => {
+          const src = Buffer.from(srcEncoded, "base64").toString("utf8");
+          const alt = Buffer.from(altEncoded, "base64").toString("utf8");
+          const className = classEncoded
+            ? Buffer.from(classEncoded, "base64").toString("utf8")
+            : "";
+          const classAttribute = className
+            ? ` class="${escapeHtml(className)}"`
+            : "";
+
+          return `<img src="${escapeHtml(toAbsoluteUrl(src))}" alt="${escapeHtml(
+            alt
+          )}"${classAttribute}>`;
+        }
+      )
+      .replace(/<div class="link-preview-favicon">[\s\S]*?<\/div>/g, "")
+      .replace(/\s*<svg class="link-preview-icon"[\s\S]*?<\/svg>/g, "")
+      .replace(/\b(href|src)="\/([^"]*)"/g, (_, attribute, path) => {
+        return `${attribute}="${escapeHtml(toAbsoluteUrl(`/${path}`))}"`;
+      })
       .replaceAll("]]>", "]]]]><![CDATA[>");
   });
 

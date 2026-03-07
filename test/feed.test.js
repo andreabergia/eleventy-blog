@@ -90,6 +90,22 @@ test('feed entry content contains actual HTML markup', () => {
     'Feed content should not contain escaped HTML tags');
 });
 
+test('feed includes absolute post images for markdown image content', () => {
+  const feedContent = fs.readFileSync(FEED_PATH, 'utf-8');
+
+  const pychatEntryMatch = feedContent.match(
+    /<entry>[\s\S]*?<title>PyChat\.ai: A live Python REPL with an agentic LLM that edits and evaluates code<\/title>[\s\S]*?<content type="html"><!\[CDATA\[([\s\S]*?)\]\]><\/content>[\s\S]*?<\/entry>/
+  );
+  assert.ok(pychatEntryMatch, 'PyChat entry should be present in the feed');
+
+  const content = pychatEntryMatch[1];
+
+  assert.ok(
+    content.includes('<img src="https://andreabergia.com/images/2026/pychat.ai/pychatai.png"'),
+    'Markdown images should be preserved as absolute img tags in the feed'
+  );
+});
+
 test('feed entries include categories for tags', () => {
   const feedContent = fs.readFileSync(FEED_PATH, 'utf-8');
 
