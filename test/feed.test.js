@@ -76,6 +76,20 @@ test('feed entries have required elements', () => {
     'Entry should have CDATA-wrapped HTML content');
 });
 
+test('feed entry content contains actual HTML markup', () => {
+  const feedContent = fs.readFileSync(FEED_PATH, 'utf-8');
+
+  const firstContentMatch = feedContent.match(/<content type="html"><!\[CDATA\[([\s\S]*?)\]\]><\/content>/);
+  assert.ok(firstContentMatch, 'Should be able to extract entry content');
+
+  const content = firstContentMatch[1];
+
+  assert.ok(content.includes('<p>') || content.includes('<h2'),
+    'Feed content should contain rendered HTML tags');
+  assert.ok(!content.includes('&lt;p&gt;') && !content.includes('&lt;h2'),
+    'Feed content should not contain escaped HTML tags');
+});
+
 test('feed entries include categories for tags', () => {
   const feedContent = fs.readFileSync(FEED_PATH, 'utf-8');
 

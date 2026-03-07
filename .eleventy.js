@@ -198,9 +198,11 @@ module.exports = function (eleventyConfig) {
     return Math.ceil(words / wordsPerMinute);
   });
 
-  eleventyConfig.addFilter("stripImagePlaceholders", (content) => {
+  eleventyConfig.addFilter("atomContent", (content) => {
     if (!content) return "";
-    return content.replace(/<eleventy-image[^>]*><\/eleventy-image>/g, "");
+    return content
+      .replace(/<eleventy-image[^>]*><\/eleventy-image>/g, "")
+      .replaceAll("]]>", "]]]]><![CDATA[>");
   });
 
   eleventyConfig.addFilter("excerpt", (content) => {

@@ -27,7 +27,7 @@ eleventyExcludeFromCollections: true
       <name>{{ site.author.name }}</name>
       <email>{{ site.author.email }}</email>
     </author>
-    <content type="html"><![CDATA[{{ post.content | stripImagePlaceholders }}]]></content>
+    <content type="html"><![CDATA[{{ post.content | atomContent | safe }}]]></content>
     {%- for tag in post.data.tags %}
     {%- if tag %}
     <category term="{{ tag | slugify }}" label="{{ tag }}"/>
